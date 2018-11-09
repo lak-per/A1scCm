@@ -1,2 +1,9 @@
-15:34:18,786  INFO devpinoyLogger"34 - Loading Configuration Repository
-15:34:18,790 DEBUG devpinoyLogger"40 - Loading Object Repository
+15:56:44,057  INFO devpinoyLogger"35 - Loading Configuration Repository
+15:56:44,064  INFO devpinoyLogger"41 - Loading Object Repository
+15:56:49,383  INFO devpinoyLogger"54 - Chrome Launched
+15:56:58,931  INFO devpinoyLogger"83 - Navigated to A1SC Landing Page
+15:56:59,102  INFO devpinoyLogger"16 - Username provided
+15:56:59,188  INFO devpinoyLogger"20 - Password provided
+15:57:05,109  INFO devpinoyLogger"24 - Submit Clicked
+15:57:05,143  INFO devpinoyLogger"104 - Element is available
+15:57:06,281  INFO devpinoyLogger"97 - Browser Closed

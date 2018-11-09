@@ -1,2 +1,9 @@
-2018-11-09 15:34:18 INFO  devpinoyLogger:34 - Loading Configuration Repository
-2018-11-09 15:34:18 DEBUG devpinoyLogger:40 - Loading Object Repository
+2018-11-09 15:56:44 INFO  devpinoyLogger:35 - Loading Configuration Repository
+2018-11-09 15:56:44 INFO  devpinoyLogger:41 - Loading Object Repository
+2018-11-09 15:56:49 INFO  devpinoyLogger:54 - Chrome Launched
+2018-11-09 15:56:58 INFO  devpinoyLogger:83 - Navigated to A1SC Landing Page
+2018-11-09 15:56:59 INFO  devpinoyLogger:16 - Username provided
+2018-11-09 15:56:59 INFO  devpinoyLogger:20 - Password provided
+2018-11-09 15:57:05 INFO  devpinoyLogger:24 - Submit Clicked
+2018-11-09 15:57:05 INFO  devpinoyLogger:104 - Element is available
+2018-11-09 15:57:06 INFO  devpinoyLogger:97 - Browser Closed

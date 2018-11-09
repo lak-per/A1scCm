@@ -5,6 +5,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -21,6 +22,7 @@ public class GroundFloor {
 	public static Properties configFile = new Properties();
 	public static Properties objectRepoFile = new Properties();
 	public static FileInputStream fis;
+	// public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static Logger log = Logger.getLogger("devpinoyLogger");
 
 	@BeforeSuite
@@ -49,6 +51,7 @@ public class GroundFloor {
 				cOptions.addArguments("--start-maximized");
 				cOptions.addArguments("--disable-notifications");
 				driver = new ChromeDriver(cOptions);
+				log.info("Chrome Launched");
 				break;
 
 			case "firefox":
@@ -59,6 +62,7 @@ public class GroundFloor {
 				FirefoxOptions ffOptions = new FirefoxOptions();
 				ffOptions.addArguments("--start-maximized");
 				driver = new FirefoxDriver(ffOptions);
+				log.info("Firefox Launched");
 				break;
 
 			case "explorer":
@@ -70,11 +74,13 @@ public class GroundFloor {
 				ieDesires.setCapability("ignoreProtectedModeSettings", true);
 				ieDesires.setCapability("ignoreZoomSetting", true);
 				driver = new InternetExplorerDriver(ieDesires);
+				log.info("Internet Explorer Launched");
 				break;
 			}
 		}
 
 		driver.get(configFile.getProperty("A1SCLandingPage"));
+		log.info("Navigated to A1SC Landing Page");
 		driver.manage()
 				.timeouts()
 				.implicitlyWait(
@@ -88,7 +94,19 @@ public class GroundFloor {
 
 		if (driver != null)
 			driver.quit();
+		log.info("Browser Closed");
 
+	}
+
+	public boolean isElementPresent(By by) {
+		try {
+			driver.findElement(by);
+			log.info("Element is available");
+			return true;
+		} catch (Throwable t) {
+			log.info("Element not available");
+			return false;
+		}
 	}
 
 }
