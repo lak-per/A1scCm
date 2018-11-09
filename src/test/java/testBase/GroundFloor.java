@@ -13,8 +13,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+
+import utilities.ExcelReader;
 
 public class GroundFloor {
 
@@ -24,7 +27,12 @@ public class GroundFloor {
 	public static FileInputStream fis;
 	// public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static Logger log = Logger.getLogger("devpinoyLogger");
+	public static ExcelReader excelReader;
 
+	/*
+	 * public static WebDriverWait wait = new WebDriverWait(driver,
+	 * Integer.parseInt(configFile.getProperty("implicitWait")));
+	 */
 	@BeforeSuite
 	public void setUp() throws Exception {
 
@@ -78,6 +86,9 @@ public class GroundFloor {
 				break;
 			}
 		}
+
+		excelReader = new ExcelReader(System.getProperty("user.dir")
+				+ configFile.getProperty("excelTestData"));
 
 		driver.get(configFile.getProperty("A1SCLandingPage"));
 		log.info("Navigated to A1SC Landing Page");

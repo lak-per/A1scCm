@@ -1,21 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
+<testng-results skipped="0" failed="1" ignored="2" total="5" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6206" started-at="2018-11-09T10:26:58Z" finished-at="2018-11-09T10:27:05Z">
+  <suite name="Default suite" duration-ms="32473" started-at="2018-11-09T19:28:03Z" finished-at="2018-11-09T19:28:35Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6206" started-at="2018-11-09T10:26:58Z" finished-at="2018-11-09T10:27:05Z">
+    <test name="Default test" duration-ms="32473" started-at="2018-11-09T19:28:03Z" finished-at="2018-11-09T19:28:35Z">
       <class name="caseOfTest.LoginTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:caseOfTest.LoginTest@32709393]" name="setUp" is-config="true" duration-ms="14901" started-at="2018-11-09T10:26:44Z" finished-at="2018-11-09T10:26:58Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:caseOfTest.LoginTest@7494e528]" name="setUp" is-config="true" duration-ms="16237" started-at="2018-11-09T19:27:46Z" finished-at="2018-11-09T19:28:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginCheck()[pri:0, instance:caseOfTest.LoginTest@32709393]" name="loginCheck" duration-ms="6167" started-at="2018-11-09T10:26:58Z" finished-at="2018-11-09T10:27:05Z">
+        <test-method status="PASS" signature="loginCheck()[pri:0, instance:caseOfTest.LoginTest@7494e528]" name="loginCheck" duration-ms="9002" started-at="2018-11-09T19:28:03Z" finished-at="2018-11-09T19:28:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginCheck -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:caseOfTest.LoginTest@32709393]" name="tearDown" is-config="true" duration-ms="1108" started-at="2018-11-09T10:27:05Z" finished-at="2018-11-09T10:27:06Z">
+        <test-method status="PASS" signature="openCreateQuote()[pri:0, instance:caseOfTest.LoginTest@7494e528]" name="openCreateQuote" duration-ms="23405" started-at="2018-11-09T19:28:12Z" depends-on-methods="caseOfTest.LoginTest.loginCheck" finished-at="2018-11-09T19:28:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openCreateQuote -->
+        <test-method status="FAIL" signature="createQuoteWithData()[pri:0, instance:caseOfTest.LoginTest@7494e528]" name="createQuoteWithData" duration-ms="9" started-at="2018-11-09T19:28:35Z" depends-on-methods="caseOfTest.LoginTest.loginCheck, caseOfTest.LoginTest.openCreateQuote" finished-at="2018-11-09T19:28:35Z">
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[Cannot find elements when the XPath is null.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: Cannot find elements when the XPath is null.
+at org.openqa.selenium.By.xpath(By.java:113)
+at caseOfTest.LoginTest.createQuoteWithData(LoginTest.java:73)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createQuoteWithData -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:caseOfTest.LoginTest@7494e528]" name="tearDown" is-config="true" duration-ms="1480" started-at="2018-11-09T19:28:35Z" finished-at="2018-11-09T19:28:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
