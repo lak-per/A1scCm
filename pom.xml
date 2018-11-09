@@ -19,12 +19,8 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
-		</dependency>
+		<!-- <dependency> <groupId>junit</groupId> <artifactId>junit</artifactId> 
+			<version>4.11</version> <scope>test</scope> </dependency> - -->
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -32,6 +28,7 @@
 			<artifactId>selenium-java</artifactId>
 			<version>3.11.0</version>
 		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -119,7 +116,7 @@
 					<configuration>
 						<!-- TestNG Suite XML files list for test execution -->
 						<suiteXmlFiles>
-							<suiteXmlFile>src/test/resources/testngRunner/testng.xml</suiteXmlFile>							
+							<suiteXmlFile>src/test/resources/testngRunner/testng.xml</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>

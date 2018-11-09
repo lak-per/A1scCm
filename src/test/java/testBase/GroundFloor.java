@@ -28,11 +28,8 @@ public class GroundFloor {
 	// public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static ExcelReader excelReader;
-
-	/*
-	 * public static WebDriverWait wait = new WebDriverWait(driver,
-	 * Integer.parseInt(configFile.getProperty("implicitWait")));
-	 */
+	//public static WebDriverWait wait;
+	
 	@BeforeSuite
 	public void setUp() throws Exception {
 
@@ -89,6 +86,8 @@ public class GroundFloor {
 
 		excelReader = new ExcelReader(System.getProperty("user.dir")
 				+ configFile.getProperty("excelTestData"));
+		
+
 
 		driver.get(configFile.getProperty("A1SCLandingPage"));
 		log.info("Navigated to A1SC Landing Page");
@@ -97,6 +96,8 @@ public class GroundFloor {
 				.implicitlyWait(
 						Integer.parseInt(configFile.getProperty("implicitWait")),
 						TimeUnit.SECONDS);
+		
+		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 
 	}
 

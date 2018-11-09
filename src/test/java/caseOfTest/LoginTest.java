@@ -5,8 +5,11 @@ import java.util.Set;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -48,53 +51,90 @@ public class LoginTest extends GroundFloor {
 				By.xpath(objectRepoFile.getProperty("a1scCreateLink"))).click();
 		log.info("Navigating to Create Quote Page");
 
+		try {
+			Thread.sleep(30000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		Set<String> windowHandles = driver.getWindowHandles();
 		Iterator<String> iterator = windowHandles.iterator();
+		System.out.println(windowHandles.size());
+
+		String tempWindowHandler, titleTemp, requiredWindowID = null;
+		String popUpWindowHandler = null;
 
 		while (iterator.hasNext()) {
-			String tempWindowHandler = iterator.next();
 
-			if (driver.switchTo().window(tempWindowHandler).getTitle()
-					.equals("EC Link")) {
-				driver.switchTo().window(tempWindowHandler);
-				break;
+			tempWindowHandler = iterator.next();
+			titleTemp = driver.switchTo().window(tempWindowHandler).getTitle();
+
+			if (titleTemp.contains("A1S Quote Center")) {
+				requiredWindowID = tempWindowHandler;
 			}
 
+			if (titleTemp.contains("Popup Messenger Window")) {
+				popUpWindowHandler = tempWindowHandler;
+			}
 		}
+		driver.switchTo().window(popUpWindowHandler).close();
+		driver.switchTo().window(requiredWindowID);
 
 		Assert.assertTrue(isElementPresent(By.xpath(objectRepoFile
 				.getProperty("createAQuoteHeader"))));
 	}
 
-	@Test(dependsOnMethods = { "openCreateQuote" , "loginCheck"})
+	@Test(dependsOnMethods = { "openCreateQuote", "loginCheck" })
 	public void createQuoteWithData() {
+
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+
+		driver.switchTo()
+				.frame(driver.findElement(By
+						.xpath("//iframe[@class='IframeContent ng-isolate-scope']")));
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By
+				.xpath(objectRepoFile.getProperty("dropdownCompany"))));
 
 		Select reuseableDropdown = new Select(driver.findElement(By
 				.xpath(objectRepoFile.getProperty("dropdownCompany"))));
-		reuseableDropdown.selectByValue("Catalyst - 647740/United States");
+		reuseableDropdown
+				.selectByVisibleText("Catalyst - 647740/United States");
 
-		reuseableDropdown = new Select(driver.findElement(By.xpath(objectRepoFile
-				.getProperty("dropdownModel"))));
-		reuseableDropdown.selectByIndex(4);
 
-		/*
-		 * wait.until(ExpectedConditions.visibilityOfElementLocated(By
-		 * .xpath(configFile.getProperty("dropdownBusinessPartner"))));
-		 */
+		Actions act = new Actions(driver);
+		act.moveToElement(
+				driver.findElement(By
+						.xpath("//select[@name='ddPID_ProductMenu']")))
+				.perform();
+
+		act.moveToElement(
+				driver.findElement(By.xpath("//a[@id='hrefMainMenu_21']")))
+				.click().perform();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By
+				.xpath(objectRepoFile.getProperty("dropdownBusinessPartner"))));
+
 		driver.findElement(
 				By.xpath(objectRepoFile.getProperty("dropdownBusinessPartner")))
 				.sendKeys("Carousel Industries Of North America - 933");
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		driver.findElement(By.xpath(objectRepoFile.getProperty("buttonSubmit")))
 				.click();
 
-		/*
-		 * wait.until(ExpectedConditions.visibilityOfElementLocated(By
-		 * .xpath(configFile.getProperty("linkCmNew"))));
-		 */
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By
+				.xpath(objectRepoFile.getProperty("linkCmNew"))));
+
 		Assert.assertTrue(isElementPresent(By.xpath(objectRepoFile
 				.getProperty("linkCmUpgrade"))));
 
 	}
-
 }

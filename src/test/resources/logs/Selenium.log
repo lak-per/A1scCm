@@ -1,11 +1,12 @@
-2018-11-10 00:57:46 INFO  devpinoyLogger:43 - Loading Configuration Repository
-2018-11-10 00:57:46 INFO  devpinoyLogger:49 - Loading Object Repository
-2018-11-10 00:57:51 INFO  devpinoyLogger:62 - Chrome Launched
-2018-11-10 00:58:03 INFO  devpinoyLogger:91 - Navigated to A1SC Landing Page
-2018-11-10 00:58:03 INFO  devpinoyLogger:22 - Username provided
-2018-11-10 00:58:03 INFO  devpinoyLogger:26 - Password provided
-2018-11-10 00:58:12 INFO  devpinoyLogger:30 - Submit Clicked
-2018-11-10 00:58:12 INFO  devpinoyLogger:112 - Element is available
-2018-11-10 00:58:12 INFO  devpinoyLogger:49 - Navigating to Create Quote Page
-2018-11-10 00:58:35 INFO  devpinoyLogger:112 - Element is available
-2018-11-10 00:58:37 INFO  devpinoyLogger:105 - Browser Closed
+2018-11-10 03:12:50 INFO  devpinoyLogger:40 - Loading Configuration Repository
+2018-11-10 03:12:50 INFO  devpinoyLogger:46 - Loading Object Repository
+2018-11-10 03:12:53 INFO  devpinoyLogger:59 - Chrome Launched
+2018-11-10 03:13:19 INFO  devpinoyLogger:93 - Navigated to A1SC Landing Page
+2018-11-10 03:13:19 INFO  devpinoyLogger:25 - Username provided
+2018-11-10 03:13:19 INFO  devpinoyLogger:29 - Password provided
+2018-11-10 03:13:28 INFO  devpinoyLogger:33 - Submit Clicked
+2018-11-10 03:13:28 INFO  devpinoyLogger:116 - Element is available
+2018-11-10 03:13:29 INFO  devpinoyLogger:52 - Navigating to Create Quote Page
+2018-11-10 03:14:01 INFO  devpinoyLogger:116 - Element is available
+2018-11-10 03:14:32 INFO  devpinoyLogger:116 - Element is available
+2018-11-10 03:14:33 INFO  devpinoyLogger:109 - Browser Closed
