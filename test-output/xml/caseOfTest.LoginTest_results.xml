@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LoginTest"
+           tests="4"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="67.075">
+  <properties />
+  
+  
+            <testcase name="loginCheck" time="12.171" classname="caseOfTest.LoginTest" />
+                <testcase name="openCreateQuote" time="42.667" classname="caseOfTest.LoginTest" />
+                <testcase name="createQuoteWithData" time="8.526" classname="caseOfTest.LoginTest" />
+                <testcase name="createQuoteWithData" time="3.711" classname="caseOfTest.LoginTest" />
+      
+</testsuite>

@@ -17,7 +17,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
 import utilities.ExcelReader;
+import utilities.ExtentMgr;
 
 public class GroundFloor {
 
@@ -28,8 +32,11 @@ public class GroundFloor {
 	// public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static ExcelReader excelReader;
-	//public static WebDriverWait wait;
-	
+	public ExtentReports extentReports = ExtentMgr.getInstance();
+	public static ExtentTest test;
+
+	// public static WebDriverWait wait;
+
 	@BeforeSuite
 	public void setUp() throws Exception {
 
@@ -86,8 +93,6 @@ public class GroundFloor {
 
 		excelReader = new ExcelReader(System.getProperty("user.dir")
 				+ configFile.getProperty("excelTestData"));
-		
-
 
 		driver.get(configFile.getProperty("A1SCLandingPage"));
 		log.info("Navigated to A1SC Landing Page");
@@ -96,8 +101,9 @@ public class GroundFloor {
 				.implicitlyWait(
 						Integer.parseInt(configFile.getProperty("implicitWait")),
 						TimeUnit.SECONDS);
-		
+
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		System.setProperty("org.uncommons.reportng.escape-output", "false");
 
 	}
 

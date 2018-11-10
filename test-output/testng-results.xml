@@ -1,29 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="5" passed="3">
+<testng-results skipped="0" failed="0" ignored="4" total="8" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="72637" started-at="2018-11-09T21:43:19Z" finished-at="2018-11-09T21:44:32Z">
+  <suite name="Default suite" duration-ms="66765" started-at="2018-11-10T08:00:00Z" finished-at="2018-11-10T08:01:07Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="72637" started-at="2018-11-09T21:43:19Z" finished-at="2018-11-09T21:44:32Z">
+    <test name="Default test" duration-ms="66765" started-at="2018-11-10T08:00:00Z" finished-at="2018-11-10T08:01:07Z">
       <class name="caseOfTest.LoginTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:caseOfTest.LoginTest@68bbe345]" name="setUp" is-config="true" duration-ms="28975" started-at="2018-11-09T21:42:50Z" finished-at="2018-11-09T21:43:19Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:caseOfTest.LoginTest@63e2203c]" name="setUp" is-config="true" duration-ms="26210" started-at="2018-11-10T07:59:34Z" finished-at="2018-11-10T08:00:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginCheck()[pri:0, instance:caseOfTest.LoginTest@68bbe345]" name="loginCheck" duration-ms="9214" started-at="2018-11-09T21:43:19Z" finished-at="2018-11-09T21:43:28Z">
+        <test-method status="PASS" signature="loginCheck()[pri:0, instance:caseOfTest.LoginTest@63e2203c]" name="loginCheck" duration-ms="10891" started-at="2018-11-10T08:00:00Z" finished-at="2018-11-10T08:00:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginCheck -->
-        <test-method status="PASS" signature="openCreateQuote()[pri:0, instance:caseOfTest.LoginTest@68bbe345]" name="openCreateQuote" duration-ms="33014" started-at="2018-11-09T21:43:28Z" depends-on-methods="caseOfTest.LoginTest.loginCheck" finished-at="2018-11-09T21:44:01Z">
+        <test-method status="PASS" signature="openCreateQuote()[pri:0, instance:caseOfTest.LoginTest@63e2203c]" name="openCreateQuote" duration-ms="42861" started-at="2018-11-10T08:00:11Z" depends-on-methods="caseOfTest.LoginTest.loginCheck" finished-at="2018-11-10T08:00:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openCreateQuote -->
-        <test-method status="PASS" signature="createQuoteWithData()[pri:0, instance:caseOfTest.LoginTest@68bbe345]" name="createQuoteWithData" duration-ms="30359" started-at="2018-11-09T21:44:01Z" depends-on-methods="caseOfTest.LoginTest.loginCheck, caseOfTest.LoginTest.openCreateQuote" finished-at="2018-11-09T21:44:32Z">
+        <test-method status="PASS" signature="createQuoteWithData(java.lang.String, java.lang.String)[pri:0, instance:caseOfTest.LoginTest@63e2203c]" name="createQuoteWithData" duration-ms="8552" started-at="2018-11-10T08:00:54Z" data-provider="readTestData" depends-on-methods="caseOfTest.LoginTest.loginCheck, caseOfTest.LoginTest.openCreateQuote" finished-at="2018-11-10T08:01:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[933.0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Jenne, Inc - 647741/United States]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createQuoteWithData -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:caseOfTest.LoginTest@68bbe345]" name="tearDown" is-config="true" duration-ms="1184" started-at="2018-11-09T21:44:32Z" finished-at="2018-11-09T21:44:33Z">
+        <test-method status="PASS" signature="createQuoteWithData(java.lang.String, java.lang.String)[pri:0, instance:caseOfTest.LoginTest@63e2203c]" name="createQuoteWithData" duration-ms="4380" started-at="2018-11-10T08:01:03Z" data-provider="readTestData" depends-on-methods="caseOfTest.LoginTest.loginCheck, caseOfTest.LoginTest.openCreateQuote" finished-at="2018-11-10T08:01:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[933.0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Catalyst - 647740/United States]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createQuoteWithData -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:caseOfTest.LoginTest@63e2203c]" name="tearDown" is-config="true" duration-ms="1532" started-at="2018-11-10T08:01:07Z" finished-at="2018-11-10T08:01:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
