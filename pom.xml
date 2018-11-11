@@ -146,6 +146,7 @@
 						<!-- TestNG Suite XML files list for test execution -->
 						<suiteXmlFiles>
 							<suiteXmlFile>src/test/resources/testngRunner/testng.xml</suiteXmlFile>
+							<argLine>-Xmx1024m</argLine>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>
