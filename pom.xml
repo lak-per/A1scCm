@@ -143,10 +143,10 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>2.21.0</version>
 					<configuration>
+						<argLine>-Xmx1024m</argLine>
 						<!-- TestNG Suite XML files list for test execution -->
 						<suiteXmlFiles>
 							<suiteXmlFile>src/test/resources/testngRunner/testng.xml</suiteXmlFile>
-							<argLine>-Xmx1024m</argLine>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>
