@@ -1,7 +1,6 @@
 package utilities;
 
 import java.io.File;
-
 import java.io.IOException;
 import java.util.Date;
 
@@ -43,4 +42,22 @@ public class UtitliyClass extends GroundFloor {
 
 	}
 
+	public static boolean iTestRunnable() {
+
+		String sheetName = "Upgrade System";
+		int rowCount = excelReader.getRowCount(sheetName);
+		// int columnCount = excelReader.getColumnCount(sheetName);
+		int columnCount = 4;
+
+		for (int rowNum = 8; rowNum < 10; rowNum++) {
+			for (int colNum = 0; colNum < 2; colNum++) {
+				if (excelReader.getCellData(sheetName, 0, rowNum).toUpperCase()
+						.equals("Y")) {
+					return true;
+				}
+
+			}
+		}
+		return false;
+	}
 }

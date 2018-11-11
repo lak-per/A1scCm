@@ -17,14 +17,12 @@ public class CustomListeners extends GroundFloor implements ITestListener {
 	@Override
 	public void onTestStart(ITestResult result) {
 
-		Reporter.log(result.getName() + " test has started");
-		Reporter.log("<br>");
-
-		test = extentReports.startTest(result.getName().toString()
-				.toUpperCase());
+		test = extentReports.startTest(result.getName());
 		test.log(LogStatus.INFO, result.getName().toString()
-				+ " hast started execution");
+				+ " has started execution");
 
+		Reporter.log(" test has started");
+		Reporter.log("<br>");
 	}
 
 	@Override
@@ -66,7 +64,8 @@ public class CustomListeners extends GroundFloor implements ITestListener {
 			e.printStackTrace();
 		}
 
-		test.log(LogStatus.FAIL, result.getName().toString() + " has failed");
+		test.log(LogStatus.FAIL, result.getName().toString()
+				+ " has failed due to " + result.getThrowable());
 		test.log(LogStatus.FAIL,
 				test.addScreenCapture(UtitliyClass.screenshotName));
 		extentReports.endTest(test);
@@ -87,7 +86,8 @@ public class CustomListeners extends GroundFloor implements ITestListener {
 			e.printStackTrace();
 		}
 
-		test.log(LogStatus.SKIP, result.getName().toString() + " has skipped");
+		test.log(LogStatus.SKIP, result.getName().toString()
+				+ " has skipped due to " + result.getThrowable());
 		extentReports.endTest(test);
 		extentReports.flush();
 
