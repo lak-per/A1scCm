@@ -191,9 +191,28 @@ public class ExcelReader {
 
 			row = sheet.getRow(0);
 			for (int i = 0; i < row.getLastCellNum(); i++) {
-				// System.out.println(row.getCell(i).getStringCellValue().trim());
-				if (row.getCell(i).getStringCellValue().trim().equals(colName))
+				// if(row.getCell(i).getStringCellValue().trim().equals(colName))
+				/*
+				 * Cell cell = row.getCell(i); String cellValue;
+				 * 
+				 * if (cell == null) { System.out.println("null cell at row ");
+				 * }
+				 * 
+				 * if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
+				 * System.out.println(cell.getStringCellValue()); cellValue
+				 * =cell.getStringCellValue() }
+				 * 
+				 * if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
+				 * System.out.println(String.valueOf(cell
+				 * .getNumericCellValue())); cellValue = }
+				 * 
+				 * if (cell.getCellType() == Cell.CELL_TYPE_BLANK) {
+				 * System.out.println("blank cell at row "); }
+				 */
+				if (row.getCell(i).getStringCellValue().trim().equals(colName)) {
 					colNum = i;
+					break;
+				}
 			}
 			if (colNum == -1)
 				return false;

@@ -38,8 +38,9 @@ public class GroundFloor {
 	// public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static ExcelReader excelReader;
-	public ExtentReports extentReports = ExtentMgr.getInstance();
-	public ExtentTest test;
+	public static ExtentReports extentReports = ExtentMgr.getInstance();
+	public static ExtentTest test;
+	public static WebDriverWait wait;
 
 	// public static WebDriverWait wait;
 
@@ -107,7 +108,7 @@ public class GroundFloor {
 				.implicitlyWait(
 						Integer.parseInt(configFile.getProperty("implicitWait")),
 						TimeUnit.SECONDS);
-
+		wait = new WebDriverWait(driver, 30);
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		System.setProperty("org.uncommons.reportng.escape-output", "false");
 
@@ -167,7 +168,8 @@ public class GroundFloor {
 		try {
 			String actualText = driver.findElement(By.xpath(actual)).getText();
 			Assert.assertEquals(actualText, expected);
-			//test.log(LogStatus.PASS, "Expected text - " + expected + " was met");
+			// test.log(LogStatus.PASS, "Expected text - " + expected +
+			// " was met");
 		} catch (Throwable e) {
 
 			UtitliyClass.screenshotCapture();
@@ -177,9 +179,36 @@ public class GroundFloor {
 					+ UtitliyClass.screenshotName + ">Screenshot </a>");
 			Reporter.log("<br>");
 
-			/*test.log(LogStatus.FAIL,
-					test.addScreenCapture(UtitliyClass.screenshotName));*/
+			/*
+			 * test.log(LogStatus.FAIL,
+			 * test.addScreenCapture(UtitliyClass.screenshotName));
+			 */
 		}
 
 	}
+
+	public boolean isElementEnabled(String xpathLoc) {
+		try {
+			if (driver.findElement(By.xpath(xpathLoc)).isEnabled()) {
+				log.info("Element is enabled");
+				Reporter.log("Element is enabled");
+				Reporter.log("<br>");
+				return true;
+			}
+
+			else {
+				log.info("Element not enabled");
+				Reporter.log("Element not enabled");
+				Reporter.log("<br>");
+				return false;
+			}
+
+		} catch (Throwable t) {
+			log.info("Element not enabled");
+			Reporter.log("Element not enabled");
+			Reporter.log("<br>");
+			return false;
+		}
+	}
+
 }

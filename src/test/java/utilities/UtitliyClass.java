@@ -39,7 +39,6 @@ public class UtitliyClass extends GroundFloor {
 
 		// Copy file at destination
 		FileUtils.copyFile(SrcFile, DestFile);
-
 	}
 
 	public static boolean iTestRunnable() {
