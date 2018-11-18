@@ -59,6 +59,9 @@ public class GroundFloor {
 							+ "\\src\\test\\resources\\properties\\ObjectRepo.properties");
 			objectRepoFile.load(fis);
 			log.info("Loading Object Repository");
+			
+			System.out.println(System.getenv("browser"));
+			System.out.println(System.getenv("quoteNumber"));
 
 			if (System.getenv("browser") != null
 					&& !System.getenv("browser").isEmpty()) {
@@ -68,6 +71,8 @@ public class GroundFloor {
 				browser = configFile.getProperty("browser").toLowerCase();
 			}
 			configFile.setProperty("browser", browser);
+			
+			
 			if (System.getenv("quoteNumber") != null
 					&& !System.getenv("quoteNumber").isEmpty()) {
 				QRN = System.getenv("quoteNumber");
