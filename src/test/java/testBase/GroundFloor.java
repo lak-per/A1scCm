@@ -63,6 +63,9 @@ public class GroundFloor {
 			if (System.getProperty("browser") != null
 					&& !System.getProperty("browser").isEmpty()) {
 				browser = System.getProperty("browser");
+				System.out
+						.println(configFile.getProperty("browser").toString());
+				System.out.println(browser);
 			} else {
 				browser = configFile.getProperty("browser").toLowerCase();
 			}
