@@ -4,7 +4,7 @@
            failures="0"
            errors="0"
            skipped="2"
-           time="65.424">
+           time="69.752">
   <properties />
   
             <testcase name="createQuoteWithData" time="0.0" classname="caseOfTest.LoginTest">
@@ -14,9 +14,9 @@
           <skipped />
     </testcase>
   
-            <testcase name="createQuoteWithData" time="8.954" classname="caseOfTest.LoginTest" />
-                <testcase name="createQuoteWithData" time="4.040" classname="caseOfTest.LoginTest" />
-                <testcase name="openCreateQuote" time="42.669" classname="caseOfTest.LoginTest" />
-                <testcase name="loginCheck" time="9.757" classname="caseOfTest.LoginTest" />
+            <testcase name="createQuoteWithData" time="8.107" classname="caseOfTest.LoginTest" />
+                <testcase name="createQuoteWithData" time="4.709" classname="caseOfTest.LoginTest" />
+                <testcase name="openCreateQuote" time="42.810" classname="caseOfTest.LoginTest" />
+                <testcase name="loginCheck" time="14.121" classname="caseOfTest.LoginTest" />
       
 </testsuite>

@@ -63,18 +63,19 @@ public class GroundFloor {
 			if (System.getenv("browser") != null
 					&& !System.getenv("browser").isEmpty()) {
 				browser = System.getenv("browser");
+
 			} else {
 				browser = configFile.getProperty("browser").toLowerCase();
 			}
 			configFile.setProperty("browser", browser);
+			if (System.getenv("quoteNumber") != null
+					&& !System.getenv("quoteNumber").isEmpty()) {
+				QRN = System.getenv("quoteNumber");
 
-			if (System.getenv("QRN") != null && !System.getenv("QRN").isEmpty()) {
-				QRN = System.getenv("QRN");
 			} else {
 				QRN = objectRepoFile.getProperty("quoteNumber");
 			}
 			objectRepoFile.setProperty("quoteNumber", QRN);
-
 			switch (configFile.getProperty("browser").toString().trim()) {
 
 			case "chrome":
