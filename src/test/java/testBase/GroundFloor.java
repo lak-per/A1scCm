@@ -75,7 +75,7 @@ public class GroundFloor {
 			if (System.getenv("QRN") != null && !System.getenv("QRN").isEmpty()) {
 				QRN = System.getenv("QRN");
 				System.out
-						.println(configFile.getProperty("QRN").toString());
+						.println(configFile.getProperty("quoteNumber").toString());
 				System.out.println(QRN);
 			} else {
 				QRN = objectRepoFile.getProperty("quoteNumber");
