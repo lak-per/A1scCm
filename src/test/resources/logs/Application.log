@@ -1,2 +1,6 @@
-18:03:04,907  INFO devpinoyLogger"55 - Loading Configuration Repository
-18:03:04,913  INFO devpinoyLogger"61 - Loading Object Repository
+18:14:15,991  INFO devpinoyLogger"55 - Loading Configuration Repository
+18:14:15,995  INFO devpinoyLogger"61 - Loading Object Repository
+18:14:31,016  INFO devpinoyLogger"111 - Firefox Launched
+18:14:49,111  INFO devpinoyLogger"132 - Navigated to A1SC Landing Page
+18:14:49,392  INFO devpinoyLogger"35 - Username provided
+18:14:50,284  INFO devpinoyLogger"45 - Password provided

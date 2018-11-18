@@ -59,9 +59,6 @@ public class GroundFloor {
 							+ "\\src\\test\\resources\\properties\\ObjectRepo.properties");
 			objectRepoFile.load(fis);
 			log.info("Loading Object Repository");
-			
-			System.out.println(System.getenv("browser"));
-			System.out.println(System.getenv("quoteNumber"));
 
 			if (System.getenv("browser") != null
 					&& !System.getenv("browser").isEmpty()) {
@@ -71,8 +68,7 @@ public class GroundFloor {
 				browser = configFile.getProperty("browser").toLowerCase();
 			}
 			configFile.setProperty("browser", browser);
-			
-			
+
 			if (System.getenv("quoteNumber") != null
 					&& !System.getenv("quoteNumber").isEmpty()) {
 				QRN = System.getenv("quoteNumber");
@@ -81,8 +77,9 @@ public class GroundFloor {
 				QRN = objectRepoFile.getProperty("quoteNumber");
 			}
 			objectRepoFile.setProperty("quoteNumber", QRN);
-			
-			switch (configFile.getProperty("browser").toString().toLowerCase().trim()) {
+
+			switch (configFile.getProperty("browser").toString().toLowerCase()
+					.trim()) {
 
 			case "chrome":
 				System.setProperty(
@@ -97,10 +94,17 @@ public class GroundFloor {
 				break;
 
 			case "firefox":
+				/*
+				 * System.setProperty( "webdriver.gecko.driver",
+				 * System.getProperty("user.dir") +
+				 * "\\src\\test\\resources\\executables\\geckodriver.exe");
+				 */
+
 				System.setProperty(
-						"webdriver.gecko.driver",
+						"webdriver.firefox.marionette",
 						System.getProperty("user.dir")
 								+ "\\src\\test\\resources\\executables\\geckodriver.exe");
+
 				FirefoxOptions ffOptions = new FirefoxOptions();
 				ffOptions.addArguments("--start-maximized");
 				driver = new FirefoxDriver(ffOptions);
