@@ -60,7 +60,7 @@ public class GroundFloor {
 			objectRepoFile.load(fis);
 			log.info("Loading Object Repository");
 
-			if (System.getenv("browser") != null
+/*			if (System.getenv("browser") != null
 					&& !System.getenv("browser").isEmpty()) {
 				browser = System.getenv("browser");
 			} else {
@@ -73,7 +73,7 @@ public class GroundFloor {
 			} else {
 				QRN = objectRepoFile.getProperty("quoteNumber");
 			}
-			objectRepoFile.setProperty("quoteNumber", QRN);
+			objectRepoFile.setProperty("quoteNumber", QRN);*/
 
 			switch (configFile.getProperty("browser").toString()) {
 
