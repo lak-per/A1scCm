@@ -1,11 +1,2 @@
-15:44:20,825  INFO devpinoyLogger"55 - Loading Configuration Repository
-15:44:20,830  INFO devpinoyLogger"61 - Loading Object Repository
-15:44:26,455  INFO devpinoyLogger"89 - Chrome Launched
-15:44:44,940  INFO devpinoyLogger"121 - Navigated to A1SC Landing Page
-15:44:45,135  INFO devpinoyLogger"35 - Username provided
-15:44:45,250  INFO devpinoyLogger"45 - Password provided
-15:44:54,328  INFO devpinoyLogger"52 - Submit Clicked
-15:44:54,392  INFO devpinoyLogger"145 - Element is available
-15:44:55,993  INFO devpinoyLogger"84 - Navigating to Create Quote Page
-15:45:38,496  INFO devpinoyLogger"145 - Element is available
-15:45:56,754  INFO devpinoyLogger"138 - Browser Closed
+16:03:38,329  INFO devpinoyLogger"55 - Loading Configuration Repository
+16:03:38,334  INFO devpinoyLogger"61 - Loading Object Repository
