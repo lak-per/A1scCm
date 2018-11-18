@@ -59,7 +59,6 @@ public class ScrapeData extends GroundFloor {
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -67,14 +66,14 @@ public class ScrapeData extends GroundFloor {
 				.getProperty("searchByIDText"))));
 		log.info("Navigating to Retrieve Quote Page");
 
-		typeText(objectRepoFile.getProperty("textBoxQuote"), "TUS1242896");
+		typeText(objectRepoFile.getProperty("textBoxQuote"),
+				objectRepoFile.getProperty("quoteNumber"));
 		clickElement(objectRepoFile.getProperty("clickSearch"));
 		log.info("Navigating to Quote Summary Page");
 
 		try {
 			Thread.sleep(40000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -114,14 +113,13 @@ public class ScrapeData extends GroundFloor {
 		}
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By
-				.xpath(objectRepoFile.getProperty("linkCMModel"))));
+				.xpath(objectRepoFile.getProperty("linkAfterLocationManager"))));
 
-		clickElement(objectRepoFile.getProperty("linkCMModel"));
+		clickElement(objectRepoFile.getProperty("linkAfterLocationManager"));
 
 		try {
 			Thread.sleep(9000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -130,6 +128,7 @@ public class ScrapeData extends GroundFloor {
 	public void scrapeData(String columnName, String xpathLocal) {
 
 		String sheetName = "Upgrade System", scrapedData;
+		int rowCount = excelReader.getRowCount(sheetName);
 		String xpathCopyLocal = xpathLocal.toLowerCase();
 		xpathLocal = xpathLocal.toString().substring(7,
 				xpathCopyLocal.toString().length());
@@ -151,12 +150,16 @@ public class ScrapeData extends GroundFloor {
 				Select dropdown = new Select(driver.findElement(By
 						.xpath(xpathLocal)));
 				scrapedData = dropdown.getFirstSelectedOption().getText();
-				excelReader.setCellData(sheetName, columnName, 82, scrapedData);
+				excelReader.setCellData(sheetName, columnName, Integer
+						.parseInt(objectRepoFile.getProperty("scrapeDatarow")),
+						scrapedData);
 
 			} else if (xpathLocal.contains("input")) {
 				scrapedData = driver.findElement(By.xpath(xpathLocal))
 						.getAttribute("ctrlvalue");
-				excelReader.setCellData(sheetName, columnName, 82, scrapedData);
+				excelReader.setCellData(sheetName, columnName, Integer
+						.parseInt(objectRepoFile.getProperty("scrapeDatarow")),
+						scrapedData);
 			}
 		} else {
 			throw new SkipException("Skipping the test case as - " + columnName
@@ -171,13 +174,19 @@ public class ScrapeData extends GroundFloor {
 		}
 	}
 
+	@Test(dependsOnMethods = { "retrieveQuote", "loginCheck", "scrapeData" }, enabled = false)
+	public void fileOut() {
+		String sheetName = "Upgrade System";
+		excelReader.fullFileWrite(sheetName);
+	}
+
 	@DataProvider
 	public Object[][] readTestData() {
 
 		String sheetName = "Upgrade System";
 		int rowCount = excelReader.getRowCount(sheetName);
 		rowCount = 3;
-		int columnStart = 15, columnCount = 232;
+		int columnStart = 15, columnCount = 561;
 
 		Object[][] data = new Object[columnCount][2];
 		for (int rowNum = columnStart - 15; rowNum < columnCount; rowNum++) {

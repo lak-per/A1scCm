@@ -30,19 +30,22 @@ public class CustomListeners extends GroundFloor implements ITestListener {
 
 		Reporter.log(result.getName() + " has passed");
 		Reporter.log("<br>");
-		try {
-			UtitliyClass.screenshotCapture();
-			Reporter.log("<a target=\"blank\" href="
-					+ UtitliyClass.screenshotName + ">Screenshot </a>");
-			Reporter.log("<br>");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		if (result.getName() != "scrapeData") {
+			try {
+				UtitliyClass.screenshotCapture();
+				Reporter.log("<a target=\"blank\" href="
+						+ UtitliyClass.screenshotName + ">Screenshot </a>");
+				Reporter.log("<br>");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
-		test.log(LogStatus.PASS, result.getName().toString() + " has passed");
-		test.log(LogStatus.PASS,
-				test.addScreenCapture(UtitliyClass.screenshotName));
+			test.log(LogStatus.PASS, result.getName().toString()
+					+ " has passed");
+			test.log(LogStatus.PASS,
+					test.addScreenCapture(UtitliyClass.screenshotName));
+		}
 		extentReports.endTest(test);
 		extentReports.flush();
 
@@ -53,21 +56,23 @@ public class CustomListeners extends GroundFloor implements ITestListener {
 
 		Reporter.log(result.getName() + " has failed");
 		Reporter.log("<br>");
-		try {
+		if (result.getName() != "scrapeData") {
+			try {
 
-			UtitliyClass.screenshotCapture();
-			Reporter.log("<a target=\"blank\" href="
-					+ UtitliyClass.screenshotName + ">Screenshot </a>");
-			Reporter.log("<br>");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+				UtitliyClass.screenshotCapture();
+				Reporter.log("<a target=\"blank\" href="
+						+ UtitliyClass.screenshotName + ">Screenshot </a>");
+				Reporter.log("<br>");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			test.log(LogStatus.FAIL, result.getName().toString()
+					+ " has failed due to " + result.getThrowable());
+			test.log(LogStatus.FAIL,
+					test.addScreenCapture(UtitliyClass.screenshotName));
 		}
-
-		test.log(LogStatus.FAIL, result.getName().toString()
-				+ " has failed due to " + result.getThrowable());
-		test.log(LogStatus.FAIL,
-				test.addScreenCapture(UtitliyClass.screenshotName));
 		extentReports.endTest(test);
 		extentReports.flush();
 
@@ -77,15 +82,16 @@ public class CustomListeners extends GroundFloor implements ITestListener {
 	public void onTestSkipped(ITestResult result) {
 
 		Reporter.log(result.getName() + "has skipped");
-		try {
-			UtitliyClass.screenshotCapture();
-			Reporter.log("<a target=\"blank\" href="
-					+ UtitliyClass.screenshotName + ">Screenshot </a>");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if (result.getName() != "scrapeData") {
+			try {
+				UtitliyClass.screenshotCapture();
+				Reporter.log("<a target=\"blank\" href="
+						+ UtitliyClass.screenshotName + ">Screenshot </a>");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-
 		test.log(LogStatus.SKIP, result.getName().toString()
 				+ " has skipped due to " + result.getThrowable());
 		extentReports.endTest(test);

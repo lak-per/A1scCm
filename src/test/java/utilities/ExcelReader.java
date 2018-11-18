@@ -1,17 +1,14 @@
 package utilities;
 
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
-
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.IndexedColors;
-
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFCreationHelper;
 import org.apache.poi.xssf.usermodel.XSSFFont;
-
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -191,24 +188,7 @@ public class ExcelReader {
 
 			row = sheet.getRow(0);
 			for (int i = 0; i < row.getLastCellNum(); i++) {
-				// if(row.getCell(i).getStringCellValue().trim().equals(colName))
-				/*
-				 * Cell cell = row.getCell(i); String cellValue;
-				 * 
-				 * if (cell == null) { System.out.println("null cell at row ");
-				 * }
-				 * 
-				 * if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
-				 * System.out.println(cell.getStringCellValue()); cellValue
-				 * =cell.getStringCellValue() }
-				 * 
-				 * if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
-				 * System.out.println(String.valueOf(cell
-				 * .getNumericCellValue())); cellValue = }
-				 * 
-				 * if (cell.getCellType() == Cell.CELL_TYPE_BLANK) {
-				 * System.out.println("blank cell at row "); }
-				 */
+
 				if (row.getCell(i).getStringCellValue().trim().equals(colName)) {
 					colNum = i;
 					break;
@@ -481,6 +461,62 @@ public class ExcelReader {
 		}
 		return -1;
 
+	}
+
+	public void fullFileWrite(String path) {
+		try {
+			fileOut = new FileOutputStream(path);
+			workbook.write(fileOut);
+			fileOut.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	// returns true if data is set successfully else false
+	public boolean setCellDatawithoutFileOut(String sheetName, String colName,
+			int rowNum, String data) {
+		try {
+			fis = new FileInputStream(path);
+			workbook = new XSSFWorkbook(fis);
+
+			if (rowNum <= 0)
+				return false;
+
+			int index = workbook.getSheetIndex(sheetName);
+			int colNum = -1;
+			if (index == -1)
+				return false;
+
+			sheet = workbook.getSheetAt(index);
+
+			row = sheet.getRow(0);
+			for (int i = 0; i < row.getLastCellNum(); i++) {
+
+				if (row.getCell(i).getStringCellValue().trim().equals(colName)) {
+					colNum = i;
+					break;
+				}
+			}
+			if (colNum == -1)
+				return false;
+
+			sheet.autoSizeColumn(colNum);
+			row = sheet.getRow(rowNum - 1);
+			if (row == null)
+				row = sheet.createRow(rowNum - 1);
+
+			cell = row.getCell(colNum);
+			if (cell == null)
+				cell = row.createCell(colNum);
+
+			cell.setCellValue(data);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 
 }
