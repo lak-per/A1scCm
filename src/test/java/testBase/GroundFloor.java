@@ -75,10 +75,6 @@ public class GroundFloor {
 			}
 			objectRepoFile.setProperty("quoteNumber", QRN);
 
-			System.out.println(configFile.getProperty("browser").toString());
-			System.out.println(objectRepoFile.getProperty("quoteNumber")
-					.toString());
-
 			switch (configFile.getProperty("browser").toString()) {
 
 			case "chrome":
