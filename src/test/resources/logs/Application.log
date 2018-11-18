@@ -1,7 +1,7 @@
-14:14:41,081  INFO devpinoyLogger"55 - Loading Configuration Repository
-14:14:41,098  INFO devpinoyLogger"61 - Loading Object Repository
-14:14:51,659  INFO devpinoyLogger"83 - Chrome Launched
-14:15:27,627  INFO devpinoyLogger"115 - Navigated to A1SC Landing Page
-14:15:28,091  INFO devpinoyLogger"35 - Username provided
-14:15:28,199  INFO devpinoyLogger"45 - Password provided
-14:16:22,196  INFO devpinoyLogger"132 - Browser Closed
+14:47:06,238  INFO devpinoyLogger"55 - Loading Configuration Repository
+14:47:06,249  INFO devpinoyLogger"61 - Loading Object Repository
+14:47:18,515  INFO devpinoyLogger"83 - Chrome Launched
+14:47:40,750  INFO devpinoyLogger"115 - Navigated to A1SC Landing Page
+14:47:41,042  INFO devpinoyLogger"35 - Username provided
+14:47:41,156  INFO devpinoyLogger"45 - Password provided
+14:49:43,955  INFO devpinoyLogger"132 - Browser Closed

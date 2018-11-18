@@ -41,7 +41,7 @@ public class GroundFloor {
 	public static ExtentReports extentReports = ExtentMgr.getInstance();
 	public static ExtentTest test;
 	public static WebDriverWait wait;
-	public static String browser;
+	public static String browser, QRN;
 
 	// public static WebDriverWait wait;
 
@@ -66,8 +66,16 @@ public class GroundFloor {
 			} else {
 				browser = configFile.getProperty("browser").toLowerCase();
 			}
-
 			configFile.setProperty("browser", browser);
+			
+			if (System.getenv("QRN") != null
+					&& System.getenv("QRN").isEmpty()) {
+				QRN = System.getenv("QRN");
+			} else {
+				QRN = objectRepoFile.getProperty("QRN").toLowerCase();
+			}
+			objectRepoFile.setProperty("QRN", QRN);
+			
 
 			switch (configFile.getProperty("browser").toLowerCase()) {
 
