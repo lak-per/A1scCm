@@ -60,30 +60,22 @@ public class GroundFloor {
 			objectRepoFile.load(fis);
 			log.info("Loading Object Repository");
 
-			if (System.getProperty("browser") != null
-					&& !System.getProperty("browser").isEmpty()) {
-				browser = System.getProperty("browser");
-				System.out
-						.println(configFile.getProperty("browser").toString());
-				System.out.println(browser);
+			if (System.getenv("browser") != null
+					&& !System.getenv("browser").isEmpty()) {
+				browser = System.getenv("browser");
 			} else {
 				browser = configFile.getProperty("browser").toLowerCase();
 			}
 			configFile.setProperty("browser", browser);
-			System.out.println(configFile.getProperty("browser").toString());
 
 			if (System.getenv("QRN") != null && !System.getenv("QRN").isEmpty()) {
 				QRN = System.getenv("QRN");
-				System.out
-						.println(configFile.getProperty("quoteNumber").toString());
-				System.out.println(QRN);
 			} else {
 				QRN = objectRepoFile.getProperty("quoteNumber");
 			}
 			objectRepoFile.setProperty("quoteNumber", QRN);
-			System.out
-					.println(configFile.getProperty("quoteNumber").toString());
-
+			
+			System.out.println(configFile.getProperty("browser").toString());
 			switch (configFile.getProperty("browser").toString()) {
 
 			case "chrome":
