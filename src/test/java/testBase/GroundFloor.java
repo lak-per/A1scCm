@@ -136,7 +136,7 @@ public class GroundFloor {
 						Integer.parseInt(configFile.getProperty("implicitWait")),
 						TimeUnit.SECONDS);
 		wait = new WebDriverWait(driver, 30);
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
 		System.setProperty("org.uncommons.reportng.escape-output", "false");
 
 	}
