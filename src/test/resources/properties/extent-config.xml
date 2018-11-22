@@ -14,7 +14,7 @@
         <protocol>https</protocol>
         
         <!-- title of the document -->
-        <documentTitle>Extent</documentTitle>
+        <documentTitle>Offer Enablement Test Reports</documentTitle>
         
         <!-- report name - displayed at top-nav -->
         <reportName>Offer Enablement CM Model Automation Report</reportName>

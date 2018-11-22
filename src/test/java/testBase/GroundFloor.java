@@ -41,7 +41,7 @@ public class GroundFloor {
 	public static ExtentReports extentReports = ExtentMgr.getInstance();
 	public static ExtentTest test;
 	public static WebDriverWait wait;
-	public static String browser, QRN;
+	public static String browser, sheetName;
 
 	// public static WebDriverWait wait;
 
@@ -60,6 +60,7 @@ public class GroundFloor {
 			objectRepoFile.load(fis);
 			log.info("Loading Object Repository");
 
+			// Selecting the browser choice
 			if (System.getenv("browser") != null
 					&& !System.getenv("browser").isEmpty()) {
 				browser = System.getenv("browser");
@@ -69,14 +70,15 @@ public class GroundFloor {
 			}
 			configFile.setProperty("browser", browser);
 
-			if (System.getenv("quoteNumber") != null
-					&& !System.getenv("quoteNumber").isEmpty()) {
-				QRN = System.getenv("quoteNumber");
+			// Selecting the model flavor
+			if (System.getenv("sheetName") != null
+					&& !System.getenv("sheetName").isEmpty()) {
+				sheetName = System.getenv("sheetName");
 
 			} else {
-				QRN = objectRepoFile.getProperty("quoteNumber");
+				sheetName = configFile.getProperty("sheetName");
 			}
-			objectRepoFile.setProperty("quoteNumber", QRN);
+			configFile.setProperty("sheetName", sheetName);
 
 			switch (configFile.getProperty("browser").toString().toLowerCase()
 					.trim()) {
@@ -125,8 +127,19 @@ public class GroundFloor {
 			}
 		}
 
-		excelReader = new ExcelReader(System.getProperty("user.dir")
-				+ configFile.getProperty("excelTestData"));
+		if (System.getenv("Model") != null && !System.getenv("Model").isEmpty()) {
+
+			if (System.getenv("Model").equals("IPO")) {
+				excelReader = new ExcelReader(System.getProperty("user.dir")
+						+ configFile.getProperty("excelTestDataIPO"));
+			} else if (System.getenv("Model").equals("CM")) {
+				excelReader = new ExcelReader(System.getProperty("user.dir")
+						+ configFile.getProperty("excelTestDataCM"));
+			}
+		} else {
+			excelReader = new ExcelReader(System.getProperty("user.dir")
+					+ configFile.getProperty("excelTestDataCM"));
+		}
 
 		driver.get(configFile.getProperty("A1SCLandingPage"));
 		log.info("Navigated to A1SC Landing Page");
@@ -135,8 +148,9 @@ public class GroundFloor {
 				.implicitlyWait(
 						Integer.parseInt(configFile.getProperty("implicitWait")),
 						TimeUnit.SECONDS);
-		wait = new WebDriverWait(driver, 30);
+		wait = new WebDriverWait(driver, 90);
 		driver.manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
+		driver.manage().timeouts().setScriptTimeout(90, TimeUnit.SECONDS);
 		System.setProperty("org.uncommons.reportng.escape-output", "false");
 
 	}
