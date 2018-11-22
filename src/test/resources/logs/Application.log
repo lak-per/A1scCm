@@ -1,24 +1,8 @@
-13:12:41,455  INFO devpinoyLogger"55 - Loading Configuration Repository
-13:12:41,460  INFO devpinoyLogger"61 - Loading Object Repository
-13:12:45,870  INFO devpinoyLogger"95 - Chrome Launched
-13:13:00,274  INFO devpinoyLogger"145 - Navigated to A1SC Landing Page
-13:13:02,218  INFO devpinoyLogger"30 - Username provided
-13:13:02,334  INFO devpinoyLogger"35 - Password provided
-13:13:07,518  INFO devpinoyLogger"39 - Submit Clicked
-13:13:13,418  INFO devpinoyLogger"90 - Navigating to Retrieve Quote Page
-13:13:13,909  INFO devpinoyLogger"99 - Navigating to Quote Summary Page
-13:13:56,223  INFO devpinoyLogger"131 - Opening the quote in view mode
-13:14:48,882  INFO devpinoyLogger"234 - Element is enabled
-13:15:04,313  INFO devpinoyLogger"234 - Element is enabled
-13:15:11,901  INFO devpinoyLogger"234 - Element is enabled
-13:15:18,716  INFO devpinoyLogger"234 - Element is enabled
-13:15:24,689  INFO devpinoyLogger"234 - Element is enabled
-13:15:34,877  INFO devpinoyLogger"90 - Navigating to Retrieve Quote Page
-13:15:35,133  INFO devpinoyLogger"99 - Navigating to Quote Summary Page
-13:16:16,616  INFO devpinoyLogger"131 - Opening the quote in view mode
-13:17:09,231  INFO devpinoyLogger"234 - Element is enabled
-13:17:15,927  INFO devpinoyLogger"234 - Element is enabled
-13:17:22,300  INFO devpinoyLogger"234 - Element is enabled
-13:17:28,657  INFO devpinoyLogger"234 - Element is enabled
-13:17:35,009  INFO devpinoyLogger"234 - Element is enabled
-13:17:46,235  INFO devpinoyLogger"163 - Browser Closed
+16:50:53,165  INFO devpinoyLogger"55 - Loading Configuration Repository
+16:50:53,172  INFO devpinoyLogger"61 - Loading Object Repository
+16:51:17,910  INFO devpinoyLogger"113 - Firefox Launched
+16:51:33,710  INFO devpinoyLogger"145 - Navigated to A1SC Landing Page
+16:51:34,316  INFO devpinoyLogger"30 - Username provided
+16:51:34,384  INFO devpinoyLogger"35 - Password provided
+16:51:41,424  INFO devpinoyLogger"39 - Submit Clicked
+16:51:46,154  INFO devpinoyLogger"163 - Browser Closed
