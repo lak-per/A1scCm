@@ -1,24 +1,79 @@
-17:37:28,215  INFO devpinoyLogger"55 - Loading Configuration Repository
-17:37:28,225  INFO devpinoyLogger"61 - Loading Object Repository
-17:37:33,645  INFO devpinoyLogger"95 - Chrome Launched
-17:37:50,823  INFO devpinoyLogger"145 - Navigated to A1SC Landing Page
-17:37:51,046  INFO devpinoyLogger"30 - Username provided
-17:37:51,192  INFO devpinoyLogger"35 - Password provided
-17:37:57,044  INFO devpinoyLogger"39 - Submit Clicked
-17:38:02,295  INFO devpinoyLogger"90 - Navigating to Retrieve Quote Page
-17:38:02,715  INFO devpinoyLogger"99 - Navigating to Quote Summary Page
-17:38:44,153  INFO devpinoyLogger"131 - Opening the quote in view mode
-17:39:36,773  INFO devpinoyLogger"234 - Element is enabled
-17:39:46,218  INFO devpinoyLogger"234 - Element is enabled
-17:39:54,804  INFO devpinoyLogger"234 - Element is enabled
-17:40:03,005  INFO devpinoyLogger"234 - Element is enabled
-17:40:10,077  INFO devpinoyLogger"234 - Element is enabled
-17:40:20,510  INFO devpinoyLogger"90 - Navigating to Retrieve Quote Page
-17:40:20,867  INFO devpinoyLogger"99 - Navigating to Quote Summary Page
-17:41:02,396  INFO devpinoyLogger"131 - Opening the quote in view mode
-17:41:54,939  INFO devpinoyLogger"234 - Element is enabled
-17:42:02,966  INFO devpinoyLogger"234 - Element is enabled
-17:42:10,445  INFO devpinoyLogger"234 - Element is enabled
-17:42:18,705  INFO devpinoyLogger"234 - Element is enabled
-17:42:27,254  INFO devpinoyLogger"234 - Element is enabled
-17:42:36,503  INFO devpinoyLogger"163 - Browser Closed
+00:32:25,517  INFO devpinoyLogger"55 - Loading Configuration Repository
+00:32:25,522  INFO devpinoyLogger"61 - Loading Object Repository
+00:32:28,730  INFO devpinoyLogger"95 - Chrome Launched
+00:32:44,716  INFO devpinoyLogger"145 - Navigated to A1SC Landing Page
+00:32:45,071  INFO devpinoyLogger"33 - Username provided
+00:32:45,222  INFO devpinoyLogger"38 - Password provided
+00:32:56,069  INFO devpinoyLogger"41 - Submit Clicked
+00:32:56,130  INFO devpinoyLogger"170 - Element is available
+00:32:57,680  INFO devpinoyLogger"61 - Navigating to Create Quote Page
+00:33:40,161  INFO devpinoyLogger"170 - Element is available
+00:34:15,244  INFO devpinoyLogger"170 - Element is available
+00:34:30,973  INFO devpinoyLogger"258 - Element is displayed
+00:34:31,016  INFO devpinoyLogger"258 - Element is displayed
+00:34:31,049  INFO devpinoyLogger"258 - Element is displayed
+00:34:31,081  INFO devpinoyLogger"258 - Element is displayed
+00:34:31,112  INFO devpinoyLogger"258 - Element is displayed
+00:34:31,145  INFO devpinoyLogger"258 - Element is displayed
+00:34:31,176  INFO devpinoyLogger"258 - Element is displayed
+00:34:31,206  INFO devpinoyLogger"258 - Element is displayed
+00:34:31,239  INFO devpinoyLogger"258 - Element is displayed
+00:34:31,271  INFO devpinoyLogger"258 - Element is displayed
+00:34:31,302  INFO devpinoyLogger"258 - Element is displayed
+00:34:31,333  INFO devpinoyLogger"258 - Element is displayed
+00:34:31,365  INFO devpinoyLogger"258 - Element is displayed
+00:34:40,164  INFO devpinoyLogger"258 - Element is displayed
+00:34:40,222  INFO devpinoyLogger"258 - Element is displayed
+00:34:40,280  INFO devpinoyLogger"258 - Element is displayed
+00:34:40,343  INFO devpinoyLogger"258 - Element is displayed
+00:34:40,409  INFO devpinoyLogger"258 - Element is displayed
+00:34:40,466  INFO devpinoyLogger"258 - Element is displayed
+00:34:40,534  INFO devpinoyLogger"258 - Element is displayed
+00:34:49,304  INFO devpinoyLogger"258 - Element is displayed
+00:34:49,362  INFO devpinoyLogger"258 - Element is displayed
+00:34:49,421  INFO devpinoyLogger"258 - Element is displayed
+00:34:49,483  INFO devpinoyLogger"258 - Element is displayed
+00:34:49,545  INFO devpinoyLogger"258 - Element is displayed
+00:34:49,606  INFO devpinoyLogger"258 - Element is displayed
+00:34:49,665  INFO devpinoyLogger"258 - Element is displayed
+00:34:49,742  INFO devpinoyLogger"258 - Element is displayed
+00:34:49,788  INFO devpinoyLogger"258 - Element is displayed
+00:34:49,830  INFO devpinoyLogger"258 - Element is displayed
+00:34:49,873  INFO devpinoyLogger"258 - Element is displayed
+00:34:49,915  INFO devpinoyLogger"258 - Element is displayed
+00:34:49,954  INFO devpinoyLogger"258 - Element is displayed
+00:35:20,009  INFO devpinoyLogger"274 - Element not displayed
+00:35:20,080  INFO devpinoyLogger"258 - Element is displayed
+00:35:20,120  INFO devpinoyLogger"258 - Element is displayed
+00:35:20,159  INFO devpinoyLogger"258 - Element is displayed
+00:35:20,196  INFO devpinoyLogger"258 - Element is displayed
+00:35:20,236  INFO devpinoyLogger"258 - Element is displayed
+00:35:20,273  INFO devpinoyLogger"258 - Element is displayed
+00:35:20,312  INFO devpinoyLogger"258 - Element is displayed
+00:35:20,349  INFO devpinoyLogger"258 - Element is displayed
+00:35:20,386  INFO devpinoyLogger"258 - Element is displayed
+00:35:20,447  INFO devpinoyLogger"258 - Element is displayed
+00:35:20,486  INFO devpinoyLogger"258 - Element is displayed
+00:35:20,524  INFO devpinoyLogger"258 - Element is displayed
+00:35:20,562  INFO devpinoyLogger"258 - Element is displayed
+00:35:20,599  INFO devpinoyLogger"258 - Element is displayed
+00:35:59,322  INFO devpinoyLogger"258 - Element is displayed
+00:35:59,412  INFO devpinoyLogger"258 - Element is displayed
+00:35:59,503  INFO devpinoyLogger"258 - Element is displayed
+00:35:59,598  INFO devpinoyLogger"258 - Element is displayed
+00:35:59,689  INFO devpinoyLogger"258 - Element is displayed
+00:36:08,424  INFO devpinoyLogger"258 - Element is displayed
+00:36:08,513  INFO devpinoyLogger"258 - Element is displayed
+00:36:08,604  INFO devpinoyLogger"258 - Element is displayed
+00:36:08,699  INFO devpinoyLogger"258 - Element is displayed
+00:36:08,790  INFO devpinoyLogger"258 - Element is displayed
+00:36:08,880  INFO devpinoyLogger"258 - Element is displayed
+00:36:08,971  INFO devpinoyLogger"258 - Element is displayed
+00:36:09,066  INFO devpinoyLogger"258 - Element is displayed
+00:36:09,160  INFO devpinoyLogger"258 - Element is displayed
+00:36:09,253  INFO devpinoyLogger"258 - Element is displayed
+00:36:09,343  INFO devpinoyLogger"258 - Element is displayed
+00:36:18,063  INFO devpinoyLogger"258 - Element is displayed
+00:36:18,161  INFO devpinoyLogger"258 - Element is displayed
+00:36:18,263  INFO devpinoyLogger"258 - Element is displayed
+00:36:24,295  INFO devpinoyLogger"163 - Browser Closed

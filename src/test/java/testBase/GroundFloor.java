@@ -251,5 +251,33 @@ public class GroundFloor {
 			return false;
 		}
 	}
+	
+	public boolean isElementDisplayed(String xpathLoc) {
+		try {
+			if (driver.findElement(By.xpath(xpathLoc)).isDisplayed()) {
+				log.info("Element is displayed");
+				Reporter.log("Element is displayed");
+				Reporter.log("<br>");
+				//test.log(LogStatus.WARNING, "Element is displayed");
+				return true;
+			}
+
+			else {
+				log.info("Element not displayed");
+				Reporter.log("Element not displayed");
+				Reporter.log("<br>");
+				test.log(LogStatus.WARNING, xpathLoc+"Element is not displayed");
+				return false;
+			}
+
+		} catch (Throwable t) {
+			log.info("Element not displayed");
+			Reporter.log("Element not displayed");
+			Reporter.log("<br>");
+			test.log(LogStatus.WARNING, xpathLoc+"Element is not displayed");
+			return false;
+		}
+	}
+
 
 }

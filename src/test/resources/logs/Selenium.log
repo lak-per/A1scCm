@@ -1,64 +1,129 @@
-2018-11-22 17:37:28 INFO  devpinoyLogger:55 - Loading Configuration Repository
-2018-11-22 17:37:28 INFO  devpinoyLogger:61 - Loading Object Repository
-2018-11-22 17:37:33 INFO  devpinoyLogger:95 - Chrome Launched
-2018-11-22 17:37:50 INFO  devpinoyLogger:145 - Navigated to A1SC Landing Page
-2018-11-22 17:37:51 INFO  devpinoyLogger:30 - Username provided
-2018-11-22 17:37:51 INFO  devpinoyLogger:35 - Password provided
-2018-11-22 17:37:57 INFO  devpinoyLogger:39 - Submit Clicked
-2018-11-22 17:37:58 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-2018-11-22 17:37:58 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-2018-11-22 17:37:58 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-2018-11-22 17:37:58 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-2018-11-22 17:37:58 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
-2018-11-22 17:37:59 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-2018-11-22 17:37:59 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-2018-11-22 17:37:59 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-2018-11-22 17:37:59 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-2018-11-22 17:37:59 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
-2018-11-22 17:37:59 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-2018-11-22 17:37:59 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-2018-11-22 17:37:59 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-2018-11-22 17:37:59 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-2018-11-22 17:37:59 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
-2018-11-22 17:38:00 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-2018-11-22 17:38:00 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-2018-11-22 17:38:00 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-2018-11-22 17:38:00 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-2018-11-22 17:38:00 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
-2018-11-22 17:38:02 INFO  devpinoyLogger:90 - Navigating to Retrieve Quote Page
-2018-11-22 17:38:02 INFO  devpinoyLogger:99 - Navigating to Quote Summary Page
-2018-11-22 17:38:44 INFO  devpinoyLogger:131 - Opening the quote in view mode
-2018-11-22 17:39:36 INFO  devpinoyLogger:234 - Element is enabled
-2018-11-22 17:39:46 INFO  devpinoyLogger:234 - Element is enabled
-2018-11-22 17:39:54 INFO  devpinoyLogger:234 - Element is enabled
-2018-11-22 17:40:03 INFO  devpinoyLogger:234 - Element is enabled
-2018-11-22 17:40:10 INFO  devpinoyLogger:234 - Element is enabled
-2018-11-22 17:40:18 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-2018-11-22 17:40:18 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-2018-11-22 17:40:18 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-2018-11-22 17:40:18 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-2018-11-22 17:40:18 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
-2018-11-22 17:40:20 INFO  devpinoyLogger:90 - Navigating to Retrieve Quote Page
-2018-11-22 17:40:20 INFO  devpinoyLogger:99 - Navigating to Quote Summary Page
-2018-11-22 17:41:02 INFO  devpinoyLogger:131 - Opening the quote in view mode
-2018-11-22 17:41:54 INFO  devpinoyLogger:234 - Element is enabled
-2018-11-22 17:42:02 INFO  devpinoyLogger:234 - Element is enabled
-2018-11-22 17:42:10 INFO  devpinoyLogger:234 - Element is enabled
-2018-11-22 17:42:18 INFO  devpinoyLogger:234 - Element is enabled
-2018-11-22 17:42:27 INFO  devpinoyLogger:234 - Element is enabled
-2018-11-22 17:42:34 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-2018-11-22 17:42:34 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-2018-11-22 17:42:34 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-2018-11-22 17:42:34 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-2018-11-22 17:42:34 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
-2018-11-22 17:42:34 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-2018-11-22 17:42:34 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-2018-11-22 17:42:34 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-2018-11-22 17:42:34 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-2018-11-22 17:42:34 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
-2018-11-22 17:42:35 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-2018-11-22 17:42:35 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-2018-11-22 17:42:35 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-2018-11-22 17:42:35 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-2018-11-22 17:42:35 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
-2018-11-22 17:42:36 INFO  devpinoyLogger:163 - Browser Closed
+2018-11-25 00:32:25 INFO  devpinoyLogger:55 - Loading Configuration Repository
+2018-11-25 00:32:25 INFO  devpinoyLogger:61 - Loading Object Repository
+2018-11-25 00:32:28 INFO  devpinoyLogger:95 - Chrome Launched
+2018-11-25 00:32:44 INFO  devpinoyLogger:145 - Navigated to A1SC Landing Page
+2018-11-25 00:32:45 INFO  devpinoyLogger:33 - Username provided
+2018-11-25 00:32:45 INFO  devpinoyLogger:38 - Password provided
+2018-11-25 00:32:56 INFO  devpinoyLogger:41 - Submit Clicked
+2018-11-25 00:32:56 INFO  devpinoyLogger:170 - Element is available
+2018-11-25 00:32:57 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+2018-11-25 00:32:57 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+2018-11-25 00:32:57 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2018-11-25 00:32:57 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2018-11-25 00:32:57 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+2018-11-25 00:32:57 INFO  devpinoyLogger:61 - Navigating to Create Quote Page
+2018-11-25 00:33:40 INFO  devpinoyLogger:170 - Element is available
+2018-11-25 00:33:40 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+2018-11-25 00:33:40 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+2018-11-25 00:33:40 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2018-11-25 00:33:40 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2018-11-25 00:33:40 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+2018-11-25 00:34:15 INFO  devpinoyLogger:170 - Element is available
+2018-11-25 00:34:22 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+2018-11-25 00:34:22 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+2018-11-25 00:34:22 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2018-11-25 00:34:22 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2018-11-25 00:34:22 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+2018-11-25 00:34:30 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:31 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:31 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:31 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:31 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:31 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:31 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:31 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:31 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:31 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:31 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:31 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:31 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:31 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+2018-11-25 00:34:31 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+2018-11-25 00:34:31 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2018-11-25 00:34:31 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2018-11-25 00:34:31 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+2018-11-25 00:34:40 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:40 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:40 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:40 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:40 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:40 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:40 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:40 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+2018-11-25 00:34:40 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+2018-11-25 00:34:40 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2018-11-25 00:34:40 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2018-11-25 00:34:40 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+2018-11-25 00:34:49 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:49 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:49 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:49 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:49 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:49 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:49 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:49 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:49 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:49 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:49 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:49 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:34:49 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:20 INFO  devpinoyLogger:274 - Element not displayed
+2018-11-25 00:35:20 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:20 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:20 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:20 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:20 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:20 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:20 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:20 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:20 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:20 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:20 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:20 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:20 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:20 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:20 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+2018-11-25 00:35:20 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+2018-11-25 00:35:20 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2018-11-25 00:35:20 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2018-11-25 00:35:20 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+2018-11-25 00:35:59 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:59 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:59 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:59 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:35:59 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:36:00 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+2018-11-25 00:36:00 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+2018-11-25 00:36:00 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2018-11-25 00:36:00 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2018-11-25 00:36:00 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+2018-11-25 00:36:08 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:36:08 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:36:08 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:36:08 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:36:08 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:36:08 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:36:08 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:36:09 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:36:09 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:36:09 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:36:09 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:36:09 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+2018-11-25 00:36:09 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+2018-11-25 00:36:09 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2018-11-25 00:36:09 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2018-11-25 00:36:09 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+2018-11-25 00:36:18 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:36:18 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:36:18 INFO  devpinoyLogger:258 - Element is displayed
+2018-11-25 00:36:18 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+2018-11-25 00:36:18 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+2018-11-25 00:36:18 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2018-11-25 00:36:18 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2018-11-25 00:36:18 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+2018-11-25 00:36:23 DEBUG cache:45 - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+2018-11-25 00:36:23 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+2018-11-25 00:36:23 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2018-11-25 00:36:23 DEBUG cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2018-11-25 00:36:23 DEBUG cache:45 - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/hswaroopkato/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+2018-11-25 00:36:24 INFO  devpinoyLogger:163 - Browser Closed

@@ -60,7 +60,7 @@ public class GenericScrapeDataTest extends GroundFloor {
 
 		if (!localArray[1][1].contains("TUS")
 				|| localArray[1][1].contains("No")
-		/* || localArray[1][1].isEmpty() */) {
+				|| localArray[1][1].isEmpty() || localArray[1][1].length() < 3) {
 			test.log(
 					LogStatus.INFO,
 					"Data scrape isn't requested "
@@ -92,7 +92,8 @@ public class GenericScrapeDataTest extends GroundFloor {
 
 		driver.switchTo().window(retriveWindowHandle);
 
-		driver.findElement(By.xpath(objectRepoFile.getProperty("textBoxQuote"))).clear();
+		driver.findElement(By.xpath(objectRepoFile.getProperty("textBoxQuote")))
+				.clear();
 		typeText(objectRepoFile.getProperty("textBoxQuote"), localArray[1][1]);
 
 		clickElement(objectRepoFile.getProperty("clickSearch"));
@@ -240,7 +241,7 @@ public class GenericScrapeDataTest extends GroundFloor {
 		allRowCount = 15;
 		allColCount = 561;
 		// rowCount = 3;
-		int columnStart = 15, rowStart = 8, columnCount = 561, colDeduction = 0;
+		int columnStart = 15, rowStart = 8, columnCount = 561, colDeduction = 0, dataIndex = 0;
 		String[][] dataArray = null;
 
 		Object[][] data = new Object[allRowCount - rowStart][1];
@@ -248,7 +249,7 @@ public class GenericScrapeDataTest extends GroundFloor {
 
 			tempName = (String) excelReader.getCellData(sheetName, 2, rowNum);
 			if (!tempName.contains("TUS") || tempName.contains("No")
-			/* || tempName.isEmpty() */) {
+					|| tempName.length() < 3) {
 
 				quoteNumber = (String) excelReader.getCellData(sheetName, 2,
 						rowNum);
@@ -264,17 +265,27 @@ public class GenericScrapeDataTest extends GroundFloor {
 								"TUS"),
 						excelReader.getCellData(sheetName, 2, rowNum).indexOf(
 								"TUS") + 10);
+
+				dataArray = new String[allRowCount - rowStart][2];
+				dataArray[0][0] = excelReader.getCellData(sheetName, 0, 1);
+				dataArray[0][1] = excelReader.getCellData(sheetName, 0, rowNum);
+				dataArray[1][0] = "QRN";
+				dataArray[1][1] = quoteNumber;
+				dataArray[2][0] = "Row";
+				dataArray[2][1] = Integer.toString(rowNum);
+				data[dataIndex][0] = dataArray;
+				dataIndex++;
+
 			}
 
-			dataArray = new String[allRowCount - rowStart][2];
-			dataArray[0][0] = excelReader.getCellData(sheetName, 0, 1);
-			dataArray[0][1] = excelReader.getCellData(sheetName, 0, rowNum);
-			dataArray[1][0] = "QRN";
-			dataArray[1][1] = quoteNumber;
-			dataArray[2][0] = "Row";
-			dataArray[2][1] = Integer.toString(rowNum);
-			data[rowNum - rowStart][0] = dataArray;
-		}
+			/*
+			 * dataArray = new String[allRowCount - rowStart][2];
+			 * dataArray[0][0] = excelReader.getCellData(sheetName, 0, 1);
+			 * dataArray[0][1] = excelReader.getCellData(sheetName, 0, rowNum);
+			 * dataArray[1][0] = "QRN"; dataArray[1][1] = quoteNumber;
+			 * dataArray[2][0] = "Row"; dataArray[2][1] =
+			 * Integer.toString(rowNum); data[rowNum - rowStart][0] = dataArray;
+			 */}
 		return data;
 	}
 }

@@ -21,48 +21,107 @@ public class AppTest {
 
 	public static void main(String[] args) {
 
-		System.out.println("Start");
+		ExcelReader excelReader;
+		excelReader = new ExcelReader(
+				System.getProperty("user.dir")
+						+ "\\src\\test\\resources\\excel\\CM_UPGRADE_TestPlanReference.xlsx");
+
+		String sheetName = "Upgrade System", tempName, quoteNumber = null;
+		int allRowCount = excelReader.getRowCount(sheetName);
+		int allColCount = excelReader.getColumnCount(sheetName);
+		allRowCount = 15;
+		allColCount = 97;
+		// rowCount = 3;
+		int columnStart = 15, rowStart = 8, columnCount = 561, colDeduction = 0, arrayStart = 0, arrayEnd = 0;
+		String[][] dataArray = null;
+		boolean checkArrayCount = false, createArray = false;
+
+		for (int mainColNum = columnStart; mainColNum < allColCount; mainColNum++) {
+
+			/*
+			 * System.out.println(excelReader .getCellData(sheetName,
+			 * mainColNum, 2) + " ---- " + checkArrayCount);
+			 */
+
+			if (checkArrayCount == false
+					&& excelReader.getCellData(sheetName, mainColNum, 2)
+							.isEmpty()) {
+				arrayStart = mainColNum;
+				checkArrayCount = true;
+			} else if (checkArrayCount == true
+					&& excelReader.getCellData(sheetName, mainColNum, 5)
+							.isEmpty()) {
+				arrayEnd = mainColNum;
+				checkArrayCount = false;
+				createArray = true;
+				mainColNum--;
+			}
+
+			if (createArray == true) {
+				//System.out.println(arrayStart + " ---- " + arrayEnd);
+				dataArray = new String[arrayEnd - arrayStart][8];
+				System.out.println("----------------------------------");
+				for (int rowNum = arrayStart; rowNum < arrayEnd; rowNum++) {
+					
+
+					for (int colNum = 1; colNum < 8; colNum++) {
+
+						dataArray[rowNum - arrayStart][colNum] = excelReader
+								.getCellData(sheetName, rowNum, colNum);
+
+						System.out.print(dataArray[rowNum - arrayStart][colNum]
+								+ "\t");
+					}
+					System.out.println();
+				}
+				createArray = false;
+			}
+		}		
+
 		/*
-		 * ExcelReader excelReader; excelReader = new ExcelReader(
-		 * System.getProperty("user.dir") +
-		 * "\\src\\test\\resources\\excel\\CM_UPGRADE_TestPlanReference.xlsx");
+		 * for (int rowNum = rowStart; rowNum < allRowCount; rowNum++) { for
+		 * (int colNum = 0; colNum < 8; colNum++) { dataArray = new
+		 * String[allRowCount - rowStart][7]; } }
 		 * 
-		 * String sheetName = "Upgrade System", temp; int rowCount =
-		 * excelReader.getRowCount(sheetName); int colCount =
-		 * excelReader.getColumnCount(sheetName); // System.out.println(rowCount
-		 * + " - " + colCount); rowCount = 3; int columnStart = 15, columnCount
-		 * = 5;
-		 * 
-		 * int allRowCount = excelReader.getRowCount(sheetName); int allColCount
-		 * = excelReader.getColumnCount(sheetName);
-		 * System.out.println(allRowCount + " - " + allColCount); // rowCount =
-		 * 3; int rowStart = 8, colDeduction = 4; String[][] dataArray = null;
-		 * 
-		 * Object[][] data = new Object[allRowCount - rowStart][2]; for (int
+		 * Object[][] data = new Object[allRowCount - rowStart][1]; for (int
 		 * rowNum = rowStart; rowNum < allRowCount; rowNum++) {
 		 * 
-		 * dataArray = new String[allColCount - colDeduction][2];
-		 * dataArray[0][0] = excelReader.getCellData(sheetName, 0, 1);
-		 * dataArray[0][1] = excelReader.getCellData(sheetName, 0, rowNum);
-		 * dataArray[1][0] = excelReader.getCellData(sheetName, 2, 1);
-		 * dataArray[1][1] = excelReader.getCellData(sheetName, 2, rowNum);
-		 * dataArray[2][0] = "Row"; dataArray[2][1] = Integer.toString(rowNum);
-		 * System.out.println(dataArray[0][0] + " - " + dataArray[0][1]);
-		 * System.out.println(dataArray[1][0] + " - " + dataArray[1][1]);
+		 * tempName = (String) excelReader.getCellData(sheetName, 2, rowNum); if
+		 * (!tempName.contains("TUS") || tempName.contains("No") ||
+		 * tempName.isEmpty() ) {
 		 * 
-		 * for (int colNum = 0; colNum < 20; colNum++) {
+		 * quoteNumber = (String) excelReader.getCellData(sheetName, 2, rowNum);
 		 * 
-		 * dataArray[colNum + 3][0] = excelReader.getCellData(sheetName, colNum
-		 * + columnStart, 1); dataArray[colNum + 3][1] =
-		 * excelReader.getCellData(sheetName, colNum + columnStart, 4);
-		 * System.out.println(dataArray[colNum + 2][0] + " - " +
-		 * dataArray[colNum + 2][1]); } // data[rowNum - rowStart][0] =
-		 * dataArray; }
+		 * throw new SkipException(
+		 * "Skipping the test case as data retrieval isn't requested for test - "
+		 * + excelReader.getCellData(sheetName, 0, rowNum));
+		 * 
+		 * } else { quoteNumber = (String) excelReader.getCellData(sheetName, 2,
+		 * rowNum).substring( excelReader.getCellData(sheetName, 2,
+		 * rowNum).indexOf( "TUS"), excelReader.getCellData(sheetName, 2,
+		 * rowNum).indexOf( "TUS") + 10);
+		 * 
+		 * dataArray = new String[allRowCount - rowStart][7]; dataArray[0][0] =
+		 * excelReader.getCellData(sheetName, 0, 1); dataArray[0][1] =
+		 * excelReader.getCellData(sheetName, 0, rowNum); dataArray[1][0] =
+		 * "QRN"; dataArray[1][1] = quoteNumber; dataArray[2][0] = "Row";
+		 * dataArray[2][1] = Integer.toString(rowNum); data[rowNum -
+		 * rowStart][0] = dataArray;
+		 * 
+		 * }
+		 * 
+		 * for (int jowNum = rowStart; jowNum < allRowCount; jowNum++) { //
+		 * dataArray[0][0]
+		 * 
+		 * }
+		 * 
+		 * 
+		 * dataArray = new String[allRowCount - rowStart][2]; dataArray[0][0] =
+		 * excelReader.getCellData(sheetName, 0, 1); dataArray[0][1] =
+		 * excelReader.getCellData(sheetName, 0, rowNum); dataArray[1][0] =
+		 * "QRN"; dataArray[1][1] = quoteNumber; dataArray[2][0] = "Row";
+		 * dataArray[2][1] = Integer.toString(rowNum); data[rowNum -
+		 * rowStart][0] = dataArray; }
 		 */
-		String abcd = "QRN# : TUS1243402", quoteNumber;
-		quoteNumber = (String) abcd.substring(abcd.indexOf("TUS"),
-				abcd.indexOf("TUS") + 10);
-		System.out.println(quoteNumber);
-
 	}
 }
