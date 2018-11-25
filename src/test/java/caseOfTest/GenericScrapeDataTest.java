@@ -239,7 +239,7 @@ public class GenericScrapeDataTest extends GroundFloor {
 		int allRowCount = excelReader.getRowCount(sheetName);
 		int allColCount = excelReader.getColumnCount(sheetName);
 		allRowCount = 15;
-		allColCount = 561;
+		//allColCount = 561;
 		// rowCount = 3;
 		int columnStart = 15, rowStart = 8, columnCount = 561, colDeduction = 0, dataIndex = 0;
 		String[][] dataArray = null;

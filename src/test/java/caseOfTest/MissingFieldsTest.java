@@ -34,6 +34,7 @@ public class MissingFieldsTest extends GroundFloor {
 
 	public static ExcelReader fieldsFile;
 	public static String xpathSheetName = "Xpath Issues";
+	static String retriveWindowHandle = null;
 
 	@Test(priority = 0)
 	public void loginCheck() throws Throwable {
@@ -41,26 +42,34 @@ public class MissingFieldsTest extends GroundFloor {
 		typeText(objectRepoFile.getProperty("UserNameText"),
 				objectRepoFile.getProperty("A1SCHandle"));
 		log.info("Username provided");
+		test.log(LogStatus.INFO, "Username provided");
 
 		typeText(objectRepoFile.getProperty("PasswordText"),
 				objectRepoFile.getProperty("A1SCPassword"));
-
 		log.info("Password provided");
+		test.log(LogStatus.INFO, "Password provided");
 
 		clickElement(objectRepoFile.getProperty("SubmitButton"));
 		log.info("Submit Clicked");
+		test.log(LogStatus.INFO, "Submit Clicked");
 
-		Assert.assertTrue(isElementPresent(By.xpath(objectRepoFile
-				.getProperty("logoutLink"))));
-
-		softAssert(objectRepoFile.getProperty("logoutLink"), "Lead Management");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By
+				.xpath(objectRepoFile.getProperty("logoutLink"))));
 
 		Reporter.log("Succesfully logged in.");
 		Reporter.log("<br>");
+		test.log(LogStatus.INFO, "Succesfully logged in");
+
+		clickElement(objectRepoFile.getProperty("designQuote"));
+		clickElement(objectRepoFile.getProperty("a1sConfigurator"));
+		clickElement(objectRepoFile.getProperty("retrieveLink"));
+		test.log(LogStatus.INFO, "Navigating to Retrieve Quote Page");
+
+		retriveWindowHandle = driver.getWindowHandle();
 
 	}
 
-	@Test(dependsOnMethods = { "loginCheck" })
+	@Test(dependsOnMethods = { "loginCheck" }, enabled = false)
 	public void openCreateQuote() {
 
 		clickElement(objectRepoFile.getProperty("designQuote"));
@@ -114,7 +123,7 @@ public class MissingFieldsTest extends GroundFloor {
 
 	}
 
-	@Test(dependsOnMethods = { "openCreateQuote", "loginCheck" })
+	@Test(dependsOnMethods = { "openCreateQuote", "loginCheck" }, enabled = false)
 	public void createQuoteWithData() {
 
 		WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -208,7 +217,7 @@ public class MissingFieldsTest extends GroundFloor {
 		}
 
 		fieldsFile = new ExcelReader(xpathFilePath.toString().trim());
-		//fieldsFile.addSheet(xpathSheetName);
+		// fieldsFile.addSheet(xpathSheetName);
 		fieldsFile.setCellDatawithoutFileOut(xpathSheetName, 1, 0, "Page Name");
 		fieldsFile.setCellDatawithoutFileOut(xpathSheetName, 1, 1,
 				"Issues or Comments");
@@ -216,8 +225,118 @@ public class MissingFieldsTest extends GroundFloor {
 		test.log(LogStatus.INFO, "Xpaths's File has been created");
 	}
 
-	@Test(dependsOnMethods = { "openCreateQuote", "loginCheck",
-			"createQuoteWithData" }, dataProvider = "readTestData")
+	@Test(dependsOnMethods = { "loginCheck" })
+	public void retrieveQuote() {
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By
+				.xpath(objectRepoFile.getProperty("searchByIDText"))));
+
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		log.info("Navigating to Retrieve Quote Page");
+		test.log(LogStatus.INFO, "Navigating to Retrieve Quote Page");
+
+		driver.switchTo().window(retriveWindowHandle);
+
+		driver.findElement(By.xpath(objectRepoFile.getProperty("textBoxQuote")))
+				.clear();
+		typeText(objectRepoFile.getProperty("textBoxQuote"),
+				objectRepoFile.getProperty("quoteNumber"));
+
+		clickElement(objectRepoFile.getProperty("clickSearch"));
+		log.info("Navigating to Quote Summary Page");
+		test.log(LogStatus.INFO, "Navigating to Quote Summary Page");
+
+		try {
+			Thread.sleep(40000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		Set<String> windowHandles = driver.getWindowHandles();
+		Iterator<String> iterator = windowHandles.iterator();
+
+		String tempWindowHandler, titleTemp, requiredWindowID = null;
+
+		while (iterator.hasNext()) {
+
+			tempWindowHandler = iterator.next();
+			titleTemp = driver.switchTo().window(tempWindowHandler).getTitle();
+
+			if (titleTemp.contains("A1S Quote Center")
+					|| titleTemp.contains("EC Link")) {
+				requiredWindowID = tempWindowHandler;
+			}
+		}
+
+		driver.switchTo().window(requiredWindowID);
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By
+				.xpath(objectRepoFile.getProperty("linkQuoteActions"))));
+
+		clickElement(objectRepoFile.getProperty("linkQuoteActions"));
+		clickElement(objectRepoFile.getProperty("clickModify"));
+		log.info("Opening the quote in view mode");
+		test.log(LogStatus.INFO, "Opening the quote in modify mode");
+
+		Reporter.log("Navigated to the Create Quote Page");
+		Reporter.log("<br>");
+		test.log(LogStatus.INFO, "Navigated to the Create Quote Page");
+
+		try {
+			Thread.sleep(40000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By
+				.xpath(objectRepoFile.getProperty("linkAfterLocationManager"))));
+
+		clickElement(objectRepoFile.getProperty("linkAfterLocationManager"));
+
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		Date d = new Date();
+		test.log(LogStatus.INFO, "Date d = new Date();");
+		String xpathFileName = d.toString().replace(":", "_").replace(" ", "_");
+		test.log(LogStatus.INFO, "String xpathFileName");
+		String xpathFilePath = System.getProperty("user.dir")
+				+ "\\src\\test\\resources\\excel\\xpathFileName_"
+				+ xpathFileName.trim().toString() + ".xlsx";
+		test.log(LogStatus.INFO, "String xpathFilePath");
+
+		File xpathFile = new File(xpathFilePath.toString().trim());
+		// fieldsFile.createExcel(xpathFile,xpathSheetName);
+
+		try {
+			XSSFWorkbook workbook = new XSSFWorkbook();
+			FileOutputStream fileOut = new FileOutputStream(xpathFile);
+			XSSFSheet sheet = workbook.createSheet(xpathSheetName);
+			workbook.write(fileOut);
+			fileOut.close();
+			workbook.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		fieldsFile = new ExcelReader(xpathFilePath.toString().trim());
+		// fieldsFile.addSheet(xpathSheetName);
+		fieldsFile.setCellDatawithoutFileOut(xpathSheetName, 1, 0, "Page Name");
+		fieldsFile.setCellDatawithoutFileOut(xpathSheetName, 1, 1,
+				"Issues or Comments");
+	}
+
+	@Test(dependsOnMethods = { "loginCheck", "retrieveQuote" }, dataProvider = "readTestData")
 	public void findingMissingFields(String[][] localArray) {
 
 		try {
@@ -312,7 +431,7 @@ public class MissingFieldsTest extends GroundFloor {
 		int allRowCount = excelReader.getRowCount(sheetName);
 		int allColCount = excelReader.getColumnCount(sheetName);
 		allRowCount = 15;
-		allColCount = 97;
+		//allColCount = 561;// 97
 		int columnStart = 15, rowStart = 8, dataRowCount = 0, arrayStart = 0, arrayEnd = 0;
 		String[][] dataArray = null;
 		boolean checkArrayCount = false, createArray = false;
@@ -368,9 +487,8 @@ public class MissingFieldsTest extends GroundFloor {
 	}
 
 	public void insertxpathData(String sheetName, String colName, String data) {
-		int rowNum = fieldsFile.getRowCount(sheetName);
-		System.out.println(rowNum);
-		fieldsFile.setCellData(sheetName, colName, rowNum+1, data);
+		int rowNum = fieldsFile.getRowCount(sheetName);		
+		fieldsFile.setCellData(sheetName, colName, rowNum + 1, data);
 	}
 
 }
