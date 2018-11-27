@@ -4,6 +4,7 @@ import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
@@ -188,7 +189,7 @@ public class ExcelReader {
 
 			row = sheet.getRow(0);
 			for (int i = 0; i < row.getLastCellNum(); i++) {
-
+				row.getCell(i).setCellType(CellType.STRING);
 				if (row.getCell(i).getStringCellValue().trim().equals(colName)) {
 					colNum = i;
 					break;

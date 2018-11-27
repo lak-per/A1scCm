@@ -29,33 +29,60 @@ public class AppTest {
 	public static void main(String[] args) {
 
 		ExcelReader excelReader;
-		excelReader = new ExcelReader(
-				System.getProperty("user.dir")
-						+ "\\src\\test\\resources\\excel\\CM_UPGRADE_TestPlanReference.xlsx");
+		excelReader = new ExcelReader(System.getProperty("user.dir")
+				+ "\\src\\test\\resources\\excel\\IPO_TestPlanReference.xlsx");
 
-		Date d = new Date();
-		String xpathFileName = d.toString().replace(":", "_").replace(" ", "_");
-		String xpathFilePath = System.getProperty("user.dir")+"\\src\\test\\resources\\excel\\xpathFileName_"
-				+ xpathFileName.trim().toString() + ".xlsx";
-		System.out.println(xpathFilePath);
-		File xpathFile = new File(xpathFilePath.toString().trim());
-		// fieldsFile.createExcel(xpathFile,xpathSheetName);
-		try {
-			XSSFWorkbook workbook = new XSSFWorkbook();
-			FileOutputStream fileOut = new FileOutputStream(xpathFile);
-			XSSFSheet sheet = workbook.createSheet(xpathSheetName);
-			workbook.write(fileOut);
-			fileOut.close();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		String sheetName = "IPO - MM", tempName, quoteNumber;
+		int allRowCount = excelReader.getRowCount(sheetName);
+		int allColCount = excelReader.getColumnCount(sheetName);
+		int columnStart = 15, rowStart = 8, columnCount = 561, colDeduction = 0, dataIndex = 0;
+
+		for (int rowCheck = 1; rowCheck < 30; rowCheck++) {
+			tempName = (String) excelReader.getCellData(sheetName, 0, rowCheck);
+
+			if (tempName.equals("OnFail")) {
+				rowStart = rowCheck + 1;
+				System.out.println(rowStart);
+				break;
+			}
+		}
+
+		for (int colCheck = 0; colCheck < 30; colCheck++) {
+			tempName = (String) excelReader.getCellData(sheetName, colCheck, 4);
+
+			if (tempName.contains("xpath:")) {
+				columnStart = colCheck;
+				System.out.println(columnStart);
+				break;
+			}
+		}
+
+		for (int rowNum = rowStart; rowNum < allRowCount; rowNum++) {
+
+			tempName = (String) excelReader.getCellData(sheetName, 2, rowNum);
+			// System.out.println(tempName);
+			if (!tempName.contains("TUS") || tempName.contains("No")
+					|| tempName.length() < 3) {
+			} else {
+				dataIndex++;
+			}
+
+		}
+		System.out.println(dataIndex);
+		
+		
+		allColCount = excelReader.getColumnCount(sheetName);
+		
+		for (int colCheck = 0; colCheck < allColCount; colCheck++) {
+			tempName = (String) excelReader.getCellData(sheetName, colCheck, 1);
+
+			if (tempName.contains("Maintenance Services")) {
+				allColCount = colCheck-1;
+				break;
+			}
 		}
 		
-		fieldsFile = new ExcelReader(xpathFilePath.toString().trim());
-		//fieldsFile.addSheet(xpathSheetName);
-		fieldsFile.setCellDatawithoutFileOut(xpathSheetName, 1, 0, "Page Name");
-		fieldsFile.setCellDatawithoutFileOut(xpathSheetName, 1, 1,
-				"Issues or Comments");
-
+		System.out.println(allColCount);
 	}
+
 }

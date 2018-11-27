@@ -155,13 +155,36 @@ public class GenericScrapeDataTest extends GroundFloor {
 		}
 
 		int allColCount = excelReader.getColumnCount(sheetName);
-		//allColCount = 21;// 561
-		for (int iteration = 15; iteration < allColCount; iteration++) {
+		String tempName;
+		for (int colCheck = 1; colCheck < allColCount; colCheck++) {
+			tempName = (String) excelReader.getCellData(sheetName, colCheck, 1);
+
+			if (tempName.contains("Maintenance Services")) {
+				allColCount = colCheck - 1;
+				break;
+			}
+		}
+
+		int columnStart = 15;
+		for (int colCheck = 0; colCheck < 30; colCheck++) {
+			tempName = (String) excelReader.getCellData(sheetName, colCheck, 4);
+
+			if (tempName.contains("xpath:")) {
+				columnStart = colCheck;
+				break;
+			}
+		}
+
+		// allColCount = 21;// 561
+		for (int iteration = columnStart; iteration < allColCount; iteration++) {
 
 			String sheetName = configFile.getProperty("sheetName"), scrapedData;
-			String colName = excelReader.getCellData(sheetName, iteration, 1);			
+			String colName = excelReader.getCellData(sheetName, iteration, 1);
 			String xpathCopyLocal = excelReader.getCellData(sheetName,
-					iteration, 4);			
+					iteration, 4);
+			if (xpathCopyLocal.isEmpty()) {
+				xpathCopyLocal = "xpath:=//b[contains(text(),'QRN')]";
+			}
 			xpathCopyLocal = xpathCopyLocal.toString().substring(7,
 					xpathCopyLocal.toString().length());
 
@@ -184,12 +207,14 @@ public class GenericScrapeDataTest extends GroundFloor {
 					scrapedData = dropdown.getFirstSelectedOption().getText();
 					excelReader.setCellData(sheetName, colName,
 							Integer.parseInt(localArray[2][1]), scrapedData);
+					//System.out.println(xpathCopyLocal + " --- " + scrapedData);
 
 				} else if (xpathCopyLocal.contains("input")) {
 					scrapedData = driver.findElement(By.xpath(xpathCopyLocal))
 							.getAttribute("ctrlvalue");
 					excelReader.setCellData(sheetName, colName,
 							Integer.parseInt(localArray[2][1]), scrapedData);
+					//System.out.println(xpathCopyLocal + " --- " + scrapedData);
 				}
 			}
 		}
@@ -238,27 +263,51 @@ public class GenericScrapeDataTest extends GroundFloor {
 		String sheetName = configFile.getProperty("sheetName"), tempName, quoteNumber = null;
 		int allRowCount = excelReader.getRowCount(sheetName);
 		int allColCount = excelReader.getColumnCount(sheetName);
-		//allRowCount = 12;
-		//allColCount = 561;
-		// rowCount = 3;
 		int columnStart = 15, rowStart = 8, columnCount = 561, colDeduction = 0, dataIndex = 0;
+
+		for (int rowCheck = 1; rowCheck < 30; rowCheck++) {
+			tempName = (String) excelReader.getCellData(sheetName, 0, rowCheck);
+
+			if (tempName.equals("OnFail")) {
+				rowStart = rowCheck + 1;
+				break;
+			}
+		}
+
+		//System.out.println(rowStart);
+
+		for (int colCheck = 0; colCheck < 30; colCheck++) {
+			tempName = (String) excelReader.getCellData(sheetName, colCheck, 4);
+
+			if (tempName.contains("xpath:")) {
+				columnStart = colCheck;
+				break;
+			}
+		}
+
 		String[][] dataArray = null;
 
-		Object[][] data = new Object[allRowCount - rowStart][1];
 		for (int rowNum = rowStart; rowNum < allRowCount; rowNum++) {
 
 			tempName = (String) excelReader.getCellData(sheetName, 2, rowNum);
-			//System.out.println(tempName);
+			if (!tempName.contains("TUS") || tempName.contains("No")
+					|| tempName.length() < 3) {
+			} else {
+				dataIndex++;
+			}
+
+		}
+
+		Object[][] data = new Object[dataIndex + 1][1];
+		dataIndex = 0;
+		for (int rowNum = rowStart; rowNum < allRowCount; rowNum++) {
+
+			tempName = (String) excelReader.getCellData(sheetName, 2, rowNum);
 			if (!tempName.contains("TUS") || tempName.contains("No")
 					|| tempName.length() < 3) {
 
 				quoteNumber = (String) excelReader.getCellData(sheetName, 2,
 						rowNum);
-				/*
-				 * throw new SkipException(
-				 * "Skipping the test case as data retrieval isn't requested for test - "
-				 * + excelReader.getCellData(sheetName, 0, rowNum));
-				 */
 			} else {
 				quoteNumber = (String) excelReader.getCellData(sheetName, 2,
 						rowNum).substring(
@@ -268,6 +317,7 @@ public class GenericScrapeDataTest extends GroundFloor {
 								"TUS") + 10);
 
 				dataArray = new String[allRowCount - rowStart][2];
+				// dataArray = new String[2][2];
 				dataArray[0][0] = excelReader.getCellData(sheetName, 0, 1);
 				dataArray[0][1] = excelReader.getCellData(sheetName, 0, rowNum);
 				dataArray[1][0] = "QRN";
@@ -279,14 +329,7 @@ public class GenericScrapeDataTest extends GroundFloor {
 
 			}
 
-			/*
-			 * dataArray = new String[allRowCount - rowStart][2];
-			 * dataArray[0][0] = excelReader.getCellData(sheetName, 0, 1);
-			 * dataArray[0][1] = excelReader.getCellData(sheetName, 0, rowNum);
-			 * dataArray[1][0] = "QRN"; dataArray[1][1] = quoteNumber;
-			 * dataArray[2][0] = "Row"; dataArray[2][1] =
-			 * Integer.toString(rowNum); data[rowNum - rowStart][0] = dataArray;
-			 */}
+		}
 		return data;
 	}
 }
