@@ -159,11 +159,9 @@ public class GenericScrapeDataTest extends GroundFloor {
 		for (int iteration = 15; iteration < allColCount; iteration++) {
 
 			String sheetName = configFile.getProperty("sheetName"), scrapedData;
-			String colName = excelReader.getCellData(sheetName, iteration, 1);
-			System.out.println(colName);
+			String colName = excelReader.getCellData(sheetName, iteration, 1);			
 			String xpathCopyLocal = excelReader.getCellData(sheetName,
-					iteration, 4);
-			System.out.println(xpathCopyLocal);
+					iteration, 4);			
 			xpathCopyLocal = xpathCopyLocal.toString().substring(7,
 					xpathCopyLocal.toString().length());
 
