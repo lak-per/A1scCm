@@ -248,7 +248,7 @@ public class GenericScrapeDataTest extends GroundFloor {
 		for (int rowNum = rowStart; rowNum < allRowCount; rowNum++) {
 
 			tempName = (String) excelReader.getCellData(sheetName, 2, rowNum);
-			System.out.println(tempName);
+			//System.out.println(tempName);
 			if (!tempName.contains("TUS") || tempName.contains("No")
 					|| tempName.length() < 3) {
 
