@@ -155,13 +155,15 @@ public class GenericScrapeDataTest extends GroundFloor {
 		}
 
 		int allColCount = excelReader.getColumnCount(sheetName);
-		allColCount = 21;// 561
+		//allColCount = 21;// 561
 		for (int iteration = 15; iteration < allColCount; iteration++) {
 
 			String sheetName = configFile.getProperty("sheetName"), scrapedData;
 			String colName = excelReader.getCellData(sheetName, iteration, 1);
+			System.out.println(colName);
 			String xpathCopyLocal = excelReader.getCellData(sheetName,
 					iteration, 4);
+			System.out.println(xpathCopyLocal);
 			xpathCopyLocal = xpathCopyLocal.toString().substring(7,
 					xpathCopyLocal.toString().length());
 
@@ -238,7 +240,7 @@ public class GenericScrapeDataTest extends GroundFloor {
 		String sheetName = configFile.getProperty("sheetName"), tempName, quoteNumber = null;
 		int allRowCount = excelReader.getRowCount(sheetName);
 		int allColCount = excelReader.getColumnCount(sheetName);
-		allRowCount = 15;
+		//allRowCount = 12;
 		//allColCount = 561;
 		// rowCount = 3;
 		int columnStart = 15, rowStart = 8, columnCount = 561, colDeduction = 0, dataIndex = 0;
@@ -248,6 +250,7 @@ public class GenericScrapeDataTest extends GroundFloor {
 		for (int rowNum = rowStart; rowNum < allRowCount; rowNum++) {
 
 			tempName = (String) excelReader.getCellData(sheetName, 2, rowNum);
+			System.out.println(tempName);
 			if (!tempName.contains("TUS") || tempName.contains("No")
 					|| tempName.length() < 3) {
 
