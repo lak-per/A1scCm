@@ -242,10 +242,32 @@ public class MissingFieldsTest extends GroundFloor {
 
 		driver.switchTo().window(retriveWindowHandle);
 
+		String sheetName = configFile.getProperty("sheetName"), tempName = null;
+		int allRowCount = excelReader.getRowCount(sheetName);
+
+		for (int rowNum = 9; rowNum < allRowCount; rowNum++) {
+
+			tempName = (String) excelReader.getCellData(sheetName, 2, rowNum);
+			if (tempName.contains("TUS")) {
+				tempName = (String) excelReader.getCellData(sheetName, 2,
+						rowNum).substring(
+						excelReader.getCellData(sheetName, 2, rowNum).indexOf(
+								"TUS"),
+						excelReader.getCellData(sheetName, 2, rowNum).indexOf(
+								"TUS") + 10);
+				break;
+			}
+
+		}
+
 		driver.findElement(By.xpath(objectRepoFile.getProperty("textBoxQuote")))
 				.clear();
-		typeText(objectRepoFile.getProperty("textBoxQuote"),
-				objectRepoFile.getProperty("quoteNumber"));
+		/*
+		 * typeText(objectRepoFile.getProperty("textBoxQuote"),
+		 * objectRepoFile.getProperty("quoteNumber"));
+		 */
+
+		typeText(objectRepoFile.getProperty("textBoxQuote"), tempName);
 
 		clickElement(objectRepoFile.getProperty("clickSearch"));
 		log.info("Navigating to Quote Summary Page");
@@ -427,12 +449,32 @@ public class MissingFieldsTest extends GroundFloor {
 	@DataProvider
 	public Object[][] readTestData() {
 
-		String sheetName = "Upgrade System";
+		String sheetName = configFile.getProperty("sheetName");
 		int allRowCount = excelReader.getRowCount(sheetName);
 		int allColCount = excelReader.getColumnCount(sheetName);
 		allRowCount = 15;
-		//allColCount = 561;// 97
+		// allColCount = 561;// 97
 		int columnStart = 15, rowStart = 8, dataRowCount = 0, arrayStart = 0, arrayEnd = 0;
+		String tempName;
+
+		for (int colCheck = 0; colCheck < 30; colCheck++) {
+			tempName = (String) excelReader.getCellData(sheetName, colCheck, 4);
+
+			if (tempName.contains("xpath:")) {
+				columnStart = colCheck;
+				break;
+			}
+		}
+
+		for (int colCheck = 1; colCheck < allColCount; colCheck++) {
+			tempName = (String) excelReader.getCellData(sheetName, colCheck, 1);
+
+			if (tempName.contains("Maintenance Services")) {
+				allColCount = colCheck - 1;
+				break;
+			}
+		}
+
 		String[][] dataArray = null;
 		boolean checkArrayCount = false, createArray = false;
 
@@ -487,7 +529,7 @@ public class MissingFieldsTest extends GroundFloor {
 	}
 
 	public void insertxpathData(String sheetName, String colName, String data) {
-		int rowNum = fieldsFile.getRowCount(sheetName);		
+		int rowNum = fieldsFile.getRowCount(sheetName);
 		fieldsFile.setCellData(sheetName, colName, rowNum + 1, data);
 	}
 
