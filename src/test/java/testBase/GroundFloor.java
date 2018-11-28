@@ -138,7 +138,7 @@ public class GroundFloor {
 			}
 		} else {
 			excelReader = new ExcelReader(System.getProperty("user.dir")
-					+ configFile.getProperty("excelTestDataIPO"));
+					+ configFile.getProperty("excelTestDataCM"));
 		}
 
 		driver.get(configFile.getProperty("A1SCLandingPage"));
