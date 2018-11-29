@@ -382,6 +382,8 @@ public class MissingFieldsTest extends GroundFloor {
 			if (!xpathCopyLocal.contains("input")
 					&& !xpathCopyLocal.contains("select")) {
 				clickElement(xpathCopyLocal);
+				System.out.println("Now Processing Page : "
+						+ localArray[0][0].toString());
 
 				try {
 					Thread.sleep(4000);
@@ -493,7 +495,7 @@ public class MissingFieldsTest extends GroundFloor {
 			if (checkArrayCount == false
 					&& excelReader.getCellData(sheetName, mainColNum, 5)
 							.isEmpty()) {
-				arrayStart = mainColNum-1;
+				arrayStart = mainColNum - 1;
 				checkArrayCount = true;
 			} else if (checkArrayCount == true
 					&& excelReader.getCellData(sheetName, mainColNum, 5)
