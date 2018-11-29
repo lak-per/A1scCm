@@ -493,7 +493,7 @@ public class MissingFieldsTest extends GroundFloor {
 		for (int mainColNum = columnStart; mainColNum < allColCount; mainColNum++) {
 
 			if (checkArrayCount == false
-					&& excelReader.getCellData(sheetName, mainColNum, 2)
+					&& excelReader.getCellData(sheetName, mainColNum, 5)
 							.isEmpty()) {
 				arrayStart = mainColNum;
 				checkArrayCount = true;
