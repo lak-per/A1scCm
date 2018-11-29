@@ -96,6 +96,9 @@ public class GenericScrapeDataTest extends GroundFloor {
 				.clear();
 		typeText(objectRepoFile.getProperty("textBoxQuote"), localArray[1][1]);
 
+		System.out.println("Now Processing - QRN : " + localArray[0][1]
+				+ " and Quote : " + localArray[1][1]);
+
 		clickElement(objectRepoFile.getProperty("clickSearch"));
 		log.info("Navigating to Quote Summary Page");
 		test.log(LogStatus.INFO, "Navigating to Quote Summary Page");
@@ -191,6 +194,7 @@ public class GenericScrapeDataTest extends GroundFloor {
 			if (!xpathCopyLocal.contains("input")
 					&& !xpathCopyLocal.contains("select")) {
 				clickElement(xpathCopyLocal);
+				System.out.println("Now Processing - Page : " + colName);
 
 				try {
 					Thread.sleep(3000);
@@ -207,14 +211,16 @@ public class GenericScrapeDataTest extends GroundFloor {
 					scrapedData = dropdown.getFirstSelectedOption().getText();
 					excelReader.setCellData(sheetName, colName,
 							Integer.parseInt(localArray[2][1]), scrapedData);
-					//System.out.println(xpathCopyLocal + " --- " + scrapedData);
+					// System.out.println(xpathCopyLocal + " --- " +
+					// scrapedData);
 
 				} else if (xpathCopyLocal.contains("input")) {
 					scrapedData = driver.findElement(By.xpath(xpathCopyLocal))
 							.getAttribute("ctrlvalue");
 					excelReader.setCellData(sheetName, colName,
 							Integer.parseInt(localArray[2][1]), scrapedData);
-					//System.out.println(xpathCopyLocal + " --- " + scrapedData);
+					// System.out.println(xpathCopyLocal + " --- " +
+					// scrapedData);
 				}
 			}
 		}
@@ -274,7 +280,7 @@ public class GenericScrapeDataTest extends GroundFloor {
 			}
 		}
 
-		//System.out.println(rowStart);
+		// System.out.println(rowStart);
 
 		for (int colCheck = 0; colCheck < 30; colCheck++) {
 			tempName = (String) excelReader.getCellData(sheetName, colCheck, 4);
