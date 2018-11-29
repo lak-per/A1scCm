@@ -304,7 +304,7 @@ public class GenericScrapeDataTest extends GroundFloor {
 
 		}
 
-		Object[][] data = new Object[dataIndex + 1][1];
+		Object[][] data = new Object[dataIndex][1];
 		dataIndex = 0;
 		for (int rowNum = rowStart; rowNum < allRowCount; rowNum++) {
 
