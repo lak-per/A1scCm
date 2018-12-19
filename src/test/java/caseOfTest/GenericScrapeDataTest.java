@@ -96,7 +96,7 @@ public class GenericScrapeDataTest extends GroundFloor {
 				.clear();
 		typeText(objectRepoFile.getProperty("textBoxQuote"), localArray[1][1]);
 
-		System.out.println("\t" + "Now Processing - QRN : " + localArray[0][1]
+		System.out.println("Now Processing - QRN : " + localArray[0][1]
 				+ " and Quote : " + localArray[1][1]);
 
 		clickElement(objectRepoFile.getProperty("clickSearch"));
@@ -213,16 +213,14 @@ public class GenericScrapeDataTest extends GroundFloor {
 							Integer.parseInt(localArray[2][1]), scrapedData);
 					// System.out.println(xpathCopyLocal + " --- " +
 					// scrapedData);
-					System.out.println("\t" + "\t"
-							+ "Now Processing - Object : " + xpathCopyLocal);
+					System.out.println("\t" + "Object : " + xpathCopyLocal);
 
 				} else if (xpathCopyLocal.contains("input")) {
 					scrapedData = driver.findElement(By.xpath(xpathCopyLocal))
 							.getAttribute("ctrlvalue");
 					excelReader.setCellData(sheetName, colName,
 							Integer.parseInt(localArray[2][1]), scrapedData);
-					System.out.println("\t" + "\t"
-							+ "Now Processing - Object : " + xpathCopyLocal);
+					System.out.println("\t" + "Object : " + xpathCopyLocal);
 					// System.out.println(xpathCopyLocal + " --- " +
 					// scrapedData);
 				}
