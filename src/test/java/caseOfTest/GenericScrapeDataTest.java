@@ -213,12 +213,18 @@ public class GenericScrapeDataTest extends GroundFloor {
 							Integer.parseInt(localArray[2][1]), scrapedData);
 					// System.out.println(xpathCopyLocal + " --- " +
 					// scrapedData);
+					System.out.println("Now Processing - QRN : "
+							+ localArray[0][1] + " and Quote : "
+							+ localArray[1][1] + "Object : " + xpathCopyLocal);
 
 				} else if (xpathCopyLocal.contains("input")) {
 					scrapedData = driver.findElement(By.xpath(xpathCopyLocal))
 							.getAttribute("ctrlvalue");
 					excelReader.setCellData(sheetName, colName,
 							Integer.parseInt(localArray[2][1]), scrapedData);
+					System.out.println("Now Processing - QRN : "
+							+ localArray[0][1] + " and Quote : "
+							+ localArray[1][1] + "Object : " + xpathCopyLocal);
 					// System.out.println(xpathCopyLocal + " --- " +
 					// scrapedData);
 				}
