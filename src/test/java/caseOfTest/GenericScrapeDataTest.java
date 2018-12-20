@@ -167,7 +167,20 @@ public class GenericScrapeDataTest extends GroundFloor {
 				break;
 			}
 		}
+		// Check to halt process at Loc 2 if it exists
+				//allColCount = excelReader.getColumnCount(sheetName);
+				if (!isElementDisplayed("//div[contains(text(),'Physical Location 2')]")) {
 
+					for (int colCheck = 1; colCheck < allColCount; colCheck++) {
+						tempName = (String) excelReader.getCellData(sheetName,
+								colCheck, 1);
+
+						if (tempName.contains("Physical Loc 2")) {
+							allColCount = colCheck - 1;
+							break;
+						}
+					}
+				} 
 		int columnStart = 15;
 		for (int colCheck = 0; colCheck < 30; colCheck++) {
 			tempName = (String) excelReader.getCellData(sheetName, colCheck, 4);
